@@ -1,4 +1,4 @@
-// src/app/components/inicio/inicio.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class InicioComponent implements OnInit {
 
-  // Información de la clínica
+  
   clinicInfo = {
     name: 'MOON PET CITY',
     title: 'CLÍNICA VETERINARIA',
@@ -32,13 +32,13 @@ export class InicioComponent implements OnInit {
     }
   };
 
-  // URLs de las imágenes de mascotas
+ 
   petImages = {
     cat: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
     dog: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'
   };
 
-  // Estado de la navegación móvil
+ 
   isMenuOpen = false;
 
   constructor() { }

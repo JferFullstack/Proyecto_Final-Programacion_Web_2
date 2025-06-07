@@ -2,6 +2,7 @@
 
 // Importar Bootstrap (nueva sintaxis)
 @use 'bootstrap/scss/bootstrap' as *;
+@use 'sass:color';
 
 // Variables globales del proyecto
 :root {
@@ -108,8 +109,8 @@ html {
   transition: all 0.3s ease;
   
   &:hover {
-    background-color: darken(#5fb3a3, 10%);
-    border-color: darken(#5fb3a3, 10%);
+    background-color: color.adjust(#5fb3a3, $lightness: -10%);
+    border-color: color.adjust(#5fb3a3, $lightness: -10%);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(95, 179, 163, 0.3);
   }
@@ -129,8 +130,8 @@ html {
   transition: all 0.3s ease;
   
   &:hover {
-    background-color: darken(#f4d03f, 10%);
-    border-color: darken(#f4d03f, 10%);
+    background-color: color.adjust(#f4d03f, $lightness: -10%);
+    border-color: color.adjust(#f4d03f, $lightness: -10%);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(244, 208, 63, 0.3);
   }
