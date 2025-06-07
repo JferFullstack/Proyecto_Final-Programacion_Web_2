@@ -1,0 +1,24 @@
+.hero-title {
+  color: #28a4a1;
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  color: #f5b938;
+  font-weight: 800;
+}
+
+.highlight {
+  color: #28a4a1;
+  font-weight: 700;
+}
+
+.highlight-yellow {
+  color: #f5b938;
+  font-weight: 700;
+}
+
+.animal-img {
+  max-height: 300px;
+  object-fit: contain;
+}
