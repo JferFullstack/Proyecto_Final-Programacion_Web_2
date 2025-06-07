@@ -1,0 +1,141 @@
+/* src/styles.scss - Archivo principal de estilos globales */
+
+// Importar Bootstrap (nueva sintaxis)
+@use 'bootstrap/scss/bootstrap' as *;
+
+// Variables globales del proyecto
+:root {
+  --primary-green: #5fb3a3;
+  --primary-yellow: #f4d03f;
+  --accent-yellow: #f7dc6f;
+  --soft-green: #85c1e9;
+  --text-dark: #2c3e50;
+  --text-light: #34495e;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+}
+
+// Estilos globales
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+// Estilos para scroll suave
+html {
+  scroll-behavior: smooth;
+}
+
+// Utilidades adicionales
+.text-primary-green {
+  color: var(--primary-green) !important;
+}
+
+.text-primary-yellow {
+  color: var(--primary-yellow) !important;
+}
+
+.bg-primary-green {
+  background-color: var(--primary-green) !important;
+}
+
+.bg-primary-yellow {
+  background-color: var(--primary-yellow) !important;
+}
+
+// Animaciones globales
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.bounce-in {
+  animation: bounceIn 0.8s ease-out;
+}
+
+// Responsive utilities
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+// Estilos para botones personalizados
+.btn-primary-green {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+  color: white;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken(#5fb3a3, 10%);
+    border-color: darken(#5fb3a3, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(95, 179, 163, 0.3);
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(95, 179, 163, 0.25);
+  }
+}
+
+.btn-primary-yellow {
+  background-color: var(--primary-yellow);
+  border-color: var(--primary-yellow);
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken(#f4d03f, 10%);
+    border-color: darken(#f4d03f, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(244, 208, 63, 0.3);
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(244, 208, 63, 0.25);
+  }
+}
