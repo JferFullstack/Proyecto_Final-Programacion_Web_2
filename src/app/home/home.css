@@ -7,3 +7,11 @@
   color: #f0bf45; 
   font-weight: bold;
 }
+
+.titulo-horario {
+  size: 80px;
+}
+
+.titulo-horas {
+  size: 200px;
+}
