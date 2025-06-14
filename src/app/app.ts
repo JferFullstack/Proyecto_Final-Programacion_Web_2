@@ -4,10 +4,11 @@ import { Home } from "./home/home";
 import { AboutUs } from './about-us/about-us';
 import { Appointment } from './appointment/appointment';
 import { Footer } from './footer/footer';
+import { Services } from './services/services';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, Home, AboutUs, Appointment, Footer, ],
+  imports: [Navbar, Home, AboutUs, Appointment, Footer, Services,],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

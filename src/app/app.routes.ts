@@ -4,6 +4,7 @@ import { Navbar } from './navbar/navbar';
 import { AboutUs } from './about-us/about-us';
 import { Appointment } from './appointment/appointment';
 import { Footer } from './footer/footer';
+import { Services } from './services/services';
 
 export const routes: Routes = [
     {
@@ -25,5 +26,9 @@ export const routes: Routes = [
     {
         path: '',
         component: Footer
+    },
+    {
+        path: '',
+        component: Services
     },
 ];

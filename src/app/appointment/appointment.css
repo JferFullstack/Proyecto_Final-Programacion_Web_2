@@ -98,11 +98,11 @@
 }
 
 .location-icon {
-    color: #4AB2B2; /* Color del icono de ubicación */
-    font-size: 1.4rem;
+    color: #ffffff; /* Color del icono de ubicación */
+    font-size: 2rem;
 }
 
-location-details {
+.location-details {
     display: flex;       /* Mantén esto para la columna */
     flex-direction: column; /* Esto apila los spans uno debajo del otro */
     align-items: flex-end; /* Alinea el texto a la derecha */
