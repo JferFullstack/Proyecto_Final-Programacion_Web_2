@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+   /* Asegúrate de que no haya márgenes o rellenos predeterminados */
+  margin: 0;
+  padding: 0;
+  /* Añade padding-top igual a la altura de tu navbar fija */
+  padding-top: 50px; /* <--- AJUSTA ESTE VALOR a la altura real de tu navbar */
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Si tu aplicación tiene un <app-root> o un contenedor principal fuera de home-container-wrapper,
+   también podrías querer asegurarte de que no tenga límites. */
+app-root { /* O el selector de tu componente raíz, si lo tienes */
+  display: block; /* Asegura que ocupe todo el espacio */
+  width: 100%;
+  height: 100%;
+}
