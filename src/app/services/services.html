@@ -1,1 +1,14 @@
-<p>services works!</p>
+<div class="nuestros-servicios">
+  <h2>NUESTROS SERVICIOS</h2>
+  <div class="servicios-grid">
+    <div *ngFor="let servicio of servicios" class="servicio">
+      <div 
+        class="icono" 
+        [ngClass]="{'fila-1': servicio.fila === 1, 'fila-2': servicio.fila === 2}">
+        <i class="fa-solid" [ngClass]="servicio.icono"></i>
+      </div>
+      <h3>{{ servicio.titulo }}</h3>
+      <p>{{ servicio.descripcion }}</p>
+    </div>
+  </div>
+</div>
