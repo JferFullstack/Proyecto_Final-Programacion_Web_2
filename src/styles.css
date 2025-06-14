@@ -1,19 +1,141 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos globales responsivos */
 html, body {
-   /* Asegúrate de que no haya márgenes o rellenos predeterminados */
   margin: 0;
   padding: 0;
-  /* Añade padding-top igual a la altura de tu navbar fija */
-  padding-top: 50px; /* <--- AJUSTA ESTE VALOR a la altura real de tu navbar */
+  /* Padding-top para navbar fija - responsivo */
+  padding-top: 60px; /* Ajusta según la altura real de tu navbar */
   width: 100%;
   height: 100%;
   overflow-x: hidden;
 }
 
-/* Si tu aplicación tiene un <app-root> o un contenedor principal fuera de home-container-wrapper,
-   también podrías querer asegurarte de que no tenga límites. */
-app-root { /* O el selector de tu componente raíz, si lo tienes */
-  display: block; /* Asegura que ocupe todo el espacio */
+
+/* Contenedor principal */
+app-root {
+  display: block;
   width: 100%;
   height: 100%;
+}
+
+/* Eliminar completamente espacios entre secciones */
+#home, #about-us, #appointment, #services, #footer {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* About-us sin ningún padding */
+.about-us-container {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Home container sin espacios */
+.home-container-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Asegurar que no hay espacios en Bootstrap */
+.container-fluid {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#appointment {
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+
+#services {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+/* Utilidades responsivas personalizadas */
+@media (max-width: 575.98px) {
+  .display-xs-6 { font-size: 2.5rem; }
+  
+  /* Reducir espacios en móviles */
+  #home, #about-us, #appointment, #services {
+    padding-bottom: 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .display-sm-5 { font-size: 3rem; }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .display-md-5 { font-size: 3rem; }
+}
+
+@media (min-width: 992px) {
+  .display-lg-4 { font-size: 3.5rem; }
+}
+
+/* Ajustes para WhatsApp flotante */
+.whatsapp-float-icon {
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Ajustes de altura mínima para secciones */
+section, div[id] {
+  min-height: fit-content;
+}
+
+/* Media queries para mejorar spacing en diferentes dispositivos */
+@media (max-width: 768px) {
+  .py-4 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+  .py-5 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+  
+  /* Reducir padding de navbar en móviles */
+  html, body {
+    padding-top: 70px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .py-md-5 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+}
+
+/* Asegurar que las imágenes sean responsivas por defecto */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mejorar legibilidad en dispositivos pequeños */
+@media (max-width: 576px) {
+  .fs-6 { font-size: 0.9rem !important; }
+  .fs-5 { font-size: 1rem !important; }
+  .fs-4 { font-size: 1.1rem !important; }
+  .fs-3 { font-size: 1.25rem !important; }
+}
+
+/* Ajustes para cards en móviles */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1.5rem !important;
+  }
+}
+
+/* Remover espacios excesivos entre componentes */
+.container, .container-fluid {
+  margin-bottom: 0;
+}
+
+/* Espaciado compacto para el about-us */
+.about-us-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }

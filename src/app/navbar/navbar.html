@@ -1,13 +1,40 @@
-<nav class="navbar navbar-expand-lg bg-light shadow-sm">
-  <div class="container-fluid px-4">
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="assets/imagenes/Logo_Moon_Pet_City.jpeg" alt="Moon Pet City" width="200" class="me-2">
+<nav class="navbar navbar-expand-lg bg-light shadow-sm fixed-top">
+  <div class="container-fluid px-3 px-md-4">
+    <!-- Logo responsivo -->
+    <a class="navbar-brand d-flex align-items-center" href="#home">
+      <img src="assets/imagenes/Logo_Moon_Pet_City.jpeg" 
+           alt="Moon Pet City" 
+           class="me-2 img-fluid"
+           style="height: 40px; width: auto;">
     </a>
-    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-      <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
-      <li class="nav-item"><a class="nav-link" href="#about-us">Acerca de nosotros</a></li>
-      <li class="nav-item"><a class="nav-link" href="#appointment">Cita</a></li>
-      <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
-    </ul>
+    
+    <!-- Botón hamburguesa para móviles -->
+    <button class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Menú colapsable -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link px-3" href="#home">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="#about-us">Acerca de nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="#appointment">Cita</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="#services">Servicios</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

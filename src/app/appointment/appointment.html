@@ -1,21 +1,50 @@
-<div class="cita-container">
-        <img src="assets/imagenes/fondo-cita.png" alt="Fondo de mascotas" class="background-image">
-        <div class="content-overlay">
-            <div class="top-left-section">
-                <a href="https://wa.me/94856737" target="_blank" class="text-decoration-none">
-                    <button class="btn btn-agenda">AGENDAR CITA</button>
-                </a>
-            </div>
+<div class="cita-container position-relative">
+  <!-- Imagen de fondo responsiva -->
+  <img src="assets/imagenes/fondo-cita.png" 
+       alt="Fondo de mascotas" 
+       class="background-image w-100 h-100 object-fit-cover">
+  
+  <div class="content-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-between p-3 p-md-4 p-lg-5">
+    
+    <!-- Sección superior izquierda - Botón -->
+    <div class="top-left-section align-self-start">
+      <a href="https://wa.me/94856737" target="_blank" class="text-decoration-none">
+        <button class="btn btn-agenda btn-lg px-4 py-3 fw-bold fs-5 fs-md-4">
+          AGENDAR CITA
+        </button>
+      </a>
+    </div>
 
-            <div class="bottom-right-section">
-                <div class="location-text">
-                    <i class="fas fa-map-marker-alt location-icon"></i>
-                    
-                    <div class="location-details">
-                        <span class="main-location">Valle de Ángeles</span>
-                        <span class="sub-location">Santa Lucía y alrededores</span>
-                  </div>
-                </div>
-            </div>
+    <!-- Sección inferior derecha - Ubicación -->
+    <div class="bottom-right-section align-self-end text-end">
+      <div class="location-text d-flex flex-column flex-md-row align-items-end">
+        <i class="fas fa-map-marker-alt location-icon fs-1 fs-md-2 mb-2 mb-md-0 me-md-3"></i>
+        
+        <div class="location-details">
+          <span class="main-location d-block fs-3 fs-md-2 fw-bold">Valle de Ángeles</span>
+          <span class="sub-location d-block fs-5 fs-md-4">Santa Lucía y alrededores</span>
         </div>
+      </div>
+    </div>
+    
+  </div>
 </div>
+
+<style>
+.cita-container {
+  min-height: 60vh;
+  height: 60vh;
+}
+
+@media (max-width: 768px) {
+  .cita-container {
+    min-height: 50vh;
+    height: 50vh;
+  }
+}
+
+.background-image {
+  object-fit: cover;
+  object-position: center;
+}
+</style>
