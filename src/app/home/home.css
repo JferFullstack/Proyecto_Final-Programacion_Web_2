@@ -1,17 +1,144 @@
-.titulo-clinica {
-  color: #4aa49c;
-  font-weight: bold;
+/* Contenedor principal que envuelve todo el área de contenido de la página */
+.home-container-wrapper {
+  min-height: calc(100vh - 82px); /* Altura de la ventana menos el navbar */
+  background-color: white; /* Asegura el fondo blanco general */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: flex-start; /* Alinea el contenido al inicio verticalmente */
+  position: relative; /* Necesario para que los elementos absolutos internos se posicionen correctamente */
+  overflow: hidden; /* Oculta cualquier cosa que se salga */
+  width: 100%;
 }
 
-.titulo-veterinaria {
-  color: #f0bf45; 
-  font-weight: bold;
+/* Área de contenido que tendrá el tamaño fijo de tu diseño */
+.home-content-area {
+  max-width: 1920px; 
+  height: 900px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
 }
 
-.titulo-horario {
-  size: 80px;
+/* ------------------- COLORES PERSONALIZADOS ------------------- */
+.text-custom-clinic {
+  color: #4aa49c; /* Verde del título "CLÍNICA" */
+  -webkit-text-stroke: 1px rgba(229, 255, 252, 0.07); /* Borde claro */
+  text-shadow: 0 0 1px rgba(229, 255, 252, 0.07);
+  font-family: 'Kanit Regular', Helvetica, sans-serif;
+  font-size: 4.5rem; /* 96px */
+  line-height: 1; /* Para controlar el espaciado de línea */
 }
 
-.titulo-horas {
-  size: 200px;
+.text-custom-veterinary {
+  color: #f0bf45; /* Amarillo del título "VETERINARIA" */
+  font-family: 'Kanit Regular', Helvetica, sans-serif;
+  font-size: 4.5rem; /* 96px */
+  line-height: 1;
 }
+
+.bg-custom-green {
+  background-color: #4aa49c !important; /* Verde de la tarjeta de horario */
+}
+
+.text-custom-yellow {
+  color: #f0bf45 !important; /* Amarillo de la tarjeta de horario e iconos */
+}
+
+/* ------------------- SECCIÓN TÍTULOS Y LOGO SUPERIOR ------------------- */
+/* ------------------- SECCIÓN TÍTULOS Y LOGO SUPERIOR ------------------- */
+.title-logo-section {
+  position: absolute;
+  top: 10px; /* Mantén o ajusta la posición vertical */
+  left: 60%; /* <--- Cambia este valor para moverlo a la derecha (por ejemplo, 70%, 80%, etc.) */
+  transform: translateX(-50%); /* Mantiene el centro del div en el 70% o el valor que pongas en left */
+  z-index: 20;
+  width: 900px; /* Asegúrate de que el ancho sea suficiente */
+  text-align: center;
+}
+.logo-top-main {
+  width: 1200px; /* Ancho del logo "Moon Pet City" superior */
+  height: auto;
+  margin-top: -1rem; /* Espacio debajo de los títulos */
+}
+
+/* ------------------- SECCIÓN IMÁGENES DE MASCOTAS Y FONDO ------------------- */
+.pet-background-section {
+  z-index: 5;
+  /* Estas propiedades ya hacen que el contenedor ocupe todo el ancho/alto */
+  /* Si ya está `w-100` y `h-100` en el HTML, no necesitas más aquí para el contenedor */
+}
+
+.dog-cat-combined-img {
+  width: 850px; /* Ajusta este ancho al tamaño deseado de tu imagen combinada */
+  height: 550px; /* Ajusta esta altura al tamaño deseado de tu imagen combinada */
+  object-fit: contain; /* Asegura que la imagen se vea completa */
+  bottom: 0; /* Anclado a la parte inferior del .pet-background-section */
+  left: 0; /* <--- CAMBIA ESTE VALOR A 0 PARA ALINEAR A LA IZQUIERDA */
+  transform: none; /* <--- QUITA CUALQUIER TRANSFORMACIÓN DE CENTRADO */
+  z-index: 1;
+}
+
+/* ------------------- SECCIÓN TARJETA DE HORARIO ------------------- */
+.hours-card-container {
+  width: 450px;
+  top: 500px; /* <--- Aumenta este valor para bajar más la tarjeta. Actualmente está en 400px. */
+  right: 150px; /* Mantén o ajusta la posición horizontal si es necesario */
+  z-index: 25;
+  box-shadow: 0 0.75rem 1.rem rgba(253, 255, 153, 0.514);
+  position: relative; /* ¡Importante para el corazón decorativo si lo posicionas relativo! */
+}
+
+/* No necesitamos card-body ni card-header con clases custom, Bootstrap ya las maneja */
+/* El padding y margin se manejan con clases de Bootstrap (p-0, py-3, py-4) */
+
+/* ------------------- ICONOS FLOTANTES ------------------- */
+/* ------------------- COLORES PERSONALIZADOS ------------------- */
+/* ... tus colores existentes ... */
+.text-custom-yellow {
+  color: #f0bf45 !important; /* Amarillo mostaza para el fondo del icono de WhatsApp */
+}
+.text-custom-teal { /* Asegúrate de que este color verde azulado esté definido si no lo está ya */
+  color: #4aa49c !important; /* Verde azulado para el icono de WhatsApp */
+}
+
+
+/* ------------------- ICONO FLOTANTE DE WHATSAPP (Ajustado para ser pequeño, circular y con icono Bootstrap) ------------------- */
+.whatsapp-float-icon {
+  position: fixed;
+  bottom: 20px; /* Distancia desde abajo */
+  right: 20px;  /* Distancia desde la derecha */
+  z-index: 30;
+
+  width: 60px;  /* Tamaño del círculo */
+  height: 60px; /* Tamaño del círculo */
+  border-radius: 50%; /* Hace que el contenedor sea circular */
+
+  background-color: #f0bf45; /* <--- Fondo amarillo mostaza para el círculo */
+
+  display: flex;
+  justify-content: center; /* Centra el icono horizontalmente */
+  align-items: center;   /* Centra el icono verticalmente */
+  text-decoration: none;
+  animation: bounce-whatsapp 2s infinite ease-in-out;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  /* Eliminamos overflow: hidden; aquí ya que no hay imagen para recortar, el icono se ajusta con font-size */
+}
+
+.whatsapp-icon-color {
+  font-size: 30px; /* <--- Tamaño del icono de WhatsApp dentro del círculo. Ajusta si es necesario. */
+  color: #4aa49c; /* <--- Color verde azulado para el icono de WhatsApp */
+}
+/* ------------------- ANIMACIONES ------------------- */
+@keyframes bounce-whatsapp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* Altura del rebote */
+  }
+}
+
+/* --- Asegúrate de que las fuentes estén cargadas correctamente --- */
+/* Si no has cargado las fuentes 'Kanit' e 'Inter' globalmente (ej. en index.html o styles.css),
+   puedes hacerlo aquí o en styles.css. Ejemplo:
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Kanit:wght@300;400;600&display=swap');
+*/
