@@ -1,40 +1,5 @@
-node_modules
+/node_modules
+.angular/
 /dist
 /out-tsc
-/tmp
-/src/assets/generated
-
-# Dependencies
-/node_modules
-
-# Misc
-.sass-cache/
 .vscode/
-/connect
-/coverage
-/e2e/*.js
-/e2e/*.map
-/karma.conf.js
-/karma-build-config.js
-/ng-e2e-config.json
-/npm-debug.log
-/yarn-debug.log
-/yarn-error.log
-/test-output/
-/build/
-.env
-.DS_Store
-Thumbs.db
-.idea/
-.project
-.classpath
-.settings/
-
-# Angular specific
-.angular/cache
-.angular/browsers.json
-
-# Local development
-/src/environments/environment.ts.local # Optional: if you have local environment files
-/src/environments/environment.prod.ts.local # Optional
-/.angular/
