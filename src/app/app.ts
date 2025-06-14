@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { Navbar } from "./navbar/navbar";
 import { Home } from "./home/home";
 import { AboutUs } from './about-us/about-us';
 import { Appointment } from './appointment/appointment';
-import { BrowserModule } from '@angular/platform-browser';
+import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, Home, AboutUs, Appointment ],
+  imports: [Navbar, Home, AboutUs, Appointment, Footer, ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

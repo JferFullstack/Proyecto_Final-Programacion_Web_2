@@ -3,7 +3,6 @@
     width: 1920px; /* Ancho ajustable */
     height: 700px; /* Alto ajustable */
     background-color: #F8D568; /* Color de fondo similar al de la imagen */
-    border-radius: 15px;
     overflow: hidden; /* Asegura que la imagen de fondo no se desborde */
     box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Sombra sutil */
 }

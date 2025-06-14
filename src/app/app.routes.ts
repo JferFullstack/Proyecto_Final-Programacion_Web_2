@@ -3,6 +3,7 @@ import { Home } from './home/home';
 import { Navbar } from './navbar/navbar';
 import { AboutUs } from './about-us/about-us';
 import { Appointment } from './appointment/appointment';
+import { Footer } from './footer/footer';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,9 @@ export const routes: Routes = [
     {
         path: '',
         component: Appointment
+    },
+    {
+        path: '',
+        component: Footer
     },
 ];
