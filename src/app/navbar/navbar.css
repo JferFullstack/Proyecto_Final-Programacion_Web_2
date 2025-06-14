@@ -1,0 +1,24 @@
+
+.navbar {
+  position: fixed; /* Hace que la barra de navegación sea flotante */
+  top: 0;          /* La fija en la parte superior de la ventana */
+  width: 100%;     /* Asegura que abarque todo el ancho de la ventana */
+  z-index: 1030;   /* Un z-index alto para que esté por encima de otros elementos */
+  
+}
+
+
+
+.navbar-nav .nav-link {
+  font-size: 18px;
+  color: black !important;
+  padding: 8px 16px;              
+  border-radius: 10px;            
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #f0bf45;      
+  color: #4aa49c !important;      
+  font-weight: bold;
+}
