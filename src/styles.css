@@ -9,7 +9,6 @@ html, body {
   overflow-x: hidden;
 }
 
-
 /* Contenedor principal */
 app-root {
   display: block;
@@ -138,4 +137,64 @@ img {
 .about-us-container {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+/* FUERZA LAS ANIMACIONES DE WHATSAPP - AGREGAR AL FINAL DEL ARCHIVO */
+
+/* Animación de rebote - MUY específica */
+a.whatsapp-float {
+  animation: whatsappBounce 2s ease-in-out infinite !important;
+  position: fixed !important;
+}
+
+@keyframes whatsappBounce {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Pulsos más visibles */
+.whatsapp-pulse {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  border: 4px solid #25D366 !important;
+  border-radius: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  animation: whatsappPulse 1.5s ease-out infinite !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+.whatsapp-pulse-delayed {
+  animation-delay: 0.7s !important;
+}
+
+/* Hover effect más obvio */
+a.whatsapp-float:hover {
+  transform: scale(1.2) !important;
+  background-color: #128C7E !important;
+  animation-play-state: paused !important;
+}
+
+/* Asegurar que se ve en móviles */
+@media (max-width: 768px) {
+  .whatsapp-pulse {
+    width: 55px !important;
+    height: 55px !important;
+  }
 }

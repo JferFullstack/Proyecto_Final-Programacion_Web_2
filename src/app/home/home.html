@@ -2,7 +2,7 @@
   <div class="container-fluid p-0 position-relative" style="margin: 0; height: auto; min-height: 500px;">
 
     <!-- Contenido principal - Sin padding bottom -->
-    <div class="container-fluid" style="margin: 0; padding: 0px 0;">
+    <div class="container-fluid" style="margin: 0; padding: 20px 0;">
       <div class="row justify-content-center" style="margin: 0;">
         <div class="col-12 text-center">
           <!-- Títulos centrados -->
@@ -22,7 +22,7 @@
 
     <!-- Imagen de fondo de mascotas - Separada de la orilla -->
     <div class="position-absolute d-none d-xl-block" 
-         style="top: 200px; left: 20px; z-index: 0; pointer-events: none; width: 60%;">
+         style="top: 200px; left: 50px; z-index: 0; pointer-events: none; width: 60%;">
       <div class="d-flex justify-content-start align-items-start h-100">
         <img
           src="assets/imagenes/Perro_gato.png"
@@ -82,13 +82,15 @@
       </div>
     </div>
 
-    <!-- WhatsApp flotante -->
-    <a href="https://wa.me/94856737" 
-       target="_blank" 
-       class="position-fixed d-flex align-items-center justify-content-center rounded-circle shadow"
-       style="bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: #25D366; z-index: 1000; text-decoration: none;">
-      <i class="bi bi-whatsapp text-white fs-3"></i>
-    </a>
+    <!-- WhatsApp flotante con animaciones -->
+<a href="https://wa.me/94856737" 
+   target="_blank" 
+   class="whatsapp-float position-fixed d-flex align-items-center justify-content-center rounded-circle shadow"
+   style="bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: #25D366; z-index: 1000; text-decoration: none;">
+  <i class="bi bi-whatsapp text-white fs-3"></i>
+  <span class="whatsapp-pulse"></span>
+  <span class="whatsapp-pulse whatsapp-pulse-delayed"></span>
+</a>
 
   </div>
 </div>
