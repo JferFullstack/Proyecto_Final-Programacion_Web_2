@@ -1,0 +1,270 @@
+/* src/app/components/acerca-de/acerca-de.component.scss */
+
+// Variables de colores (mismas que Moon Pet City)
+$primary-green: #5fb3a3;
+$primary-yellow: #f4d03f;
+$accent-yellow: #f7dc6f;
+$soft-green: #85c1e9;
+$text-dark: #2c3e50;
+$text-light: #34495e;
+$white: #ffffff;
+$light-gray: #f8f9fa;
+
+.acerca-section {
+  padding: 100px 0 80px 0;
+  background: linear-gradient(135deg, $light-gray 0%, $white 100%);
+  position: relative;
+  
+  // Patrón de fondo sutil
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="%23f4d03f" opacity="0.1"/><circle cx="90" cy="90" r="1.5" fill="%235fb3a3" opacity="0.1"/><circle cx="50" cy="30" r="1" fill="%23f4d03f" opacity="0.1"/></svg>');
+    z-index: 0;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  // Título principal
+  .section-main-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    
+    .text-vision {
+      color: $primary-green;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .text-mission {
+      color: $primary-yellow;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .brand-name {
+      color: $soft-green;
+      font-style: italic;
+    }
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: $text-light;
+    margin-bottom: 50px;
+    font-style: italic;
+  }
+  
+  // Estilos de las tarjetas
+  .card {
+    border: none;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+  
+  .vision-card {
+    border-top: 5px solid $primary-green;
+    
+    &:hover {
+      border-top-color: darken($primary-green, 10%);
+    }
+  }
+  
+  .mission-card {
+    border-top: 5px solid $primary-yellow;
+    
+    &:hover {
+      border-top-color: darken($primary-yellow, 10%);
+    }
+  }
+  
+  // Header personalizado de las tarjetas
+  .card-header-custom {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+    .icon-container {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      
+      &.vision-icon {
+        background: linear-gradient(135deg, $primary-green, lighten($primary-green, 20%));
+        box-shadow: 0 5px 15px rgba(95, 179, 163, 0.3);
+      }
+      
+      &.mission-icon {
+        background: linear-gradient(135deg, $primary-yellow, lighten($primary-yellow, 20%));
+        box-shadow: 0 5px 15px rgba(244, 208, 63, 0.3);
+      }
+    }
+    
+    .card-icon {
+      filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+    }
+  }
+  
+  // Títulos de las tarjetas
+  .text-vision {
+    color: $primary-green;
+    font-size: 1.8rem;
+  }
+  
+  .text-mission {
+    color: $primary-yellow;
+    font-size: 1.8rem;
+  }
+  
+  // Texto de las tarjetas
+  .card-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: $text-dark;
+    text-align: justify;
+  }
+  
+  // Destacar "ONE HEALTH"
+  .one-health {
+    color: $primary-green;
+    background: linear-gradient(135deg, lighten($primary-green, 40%), lighten($primary-yellow, 40%));
+    padding: 2px 8px;
+    border-radius: 15px;
+    font-weight: 700;
+  }
+  
+  // Sección de valores
+  .values-section {
+    background: $white;
+    border-radius: 25px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid lighten($primary-green, 30%);
+    
+    .values-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $primary-green;
+      margin-bottom: 30px;
+    }
+    
+    .value-item {
+      text-align: center;
+      padding: 20px 10px;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+      
+      .value-icon {
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 10px;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+      }
+      
+      .value-text {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $text-dark;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .acerca-section {
+    padding: 80px 0 60px 0;
+    
+    .section-main-title {
+      font-size: 2rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+    
+    .card-header-custom {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+      
+      .icon-container {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+      }
+    }
+    
+    .text-vision,
+    .text-mission {
+      font-size: 1.5rem;
+    }
+    
+    .card-text {
+      font-size: 1rem;
+      text-align: left;
+    }
+    
+    .values-section {
+      padding: 30px 20px;
+      
+      .values-title {
+        font-size: 1.5rem;
+      }
+      
+      .value-item .value-icon {
+        font-size: 2rem;
+      }
+      
+      .value-text {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .acerca-section {
+    padding: 60px 0 40px 0;
+    
+    .section-main-title {
+      font-size: 1.8rem;
+    }
+    
+    .card-body {
+      padding: 1.5rem !important;
+    }
+    
+    .values-section {
+      margin-top: 30px;
+    }
+  }
+}
+
+.section-full-height {
+  min-height: 100vh;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

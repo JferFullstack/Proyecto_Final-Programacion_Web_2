@@ -1,0 +1,347 @@
+<div class="section-uniform">
+  <div class="appointment-hero-section">
+    <!-- Imagen de fondo con overlay -->
+    <div class="hero-background">
+      <img 
+        src="assets/imagenes/fondo-cita.png" 
+        alt="Fondo de mascotas" 
+        class="hero-image"
+        loading="lazy"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="hero-content">
+      
+      <!-- Sección superior - Botón de agendar -->
+      <div class="cta-section">
+        <div class="cta-content">
+          <h1 class="cta-title">¿Tu mascota necesita atención?</h1>
+          <p class="cta-subtitle">Agenda una consulta a domicilio</p>
+          <a href="https://wa.me/94856737" target="_blank" class="cta-button" rel="noopener">
+            <i class="fab fa-whatsapp me-2"></i>
+            AGENDAR CITA
+          </a>
+        </div>
+      </div>
+
+      <!-- Sección inferior - Información de ubicación -->
+      <div class="location-section">
+        <div class="location-card">
+          <div class="location-icon-wrapper">
+            <i class="fas fa-map-marker-alt location-icon"></i>
+          </div>
+          <div class="location-info">
+            <h3 class="location-title">Área de Cobertura</h3>
+            <p class="location-primary">Valle de Ángeles</p>
+            <p class="location-secondary">Santa Lucía y alrededores</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<style>
+/* Contenedor para tamaño uniforme en todas las secciones */
+.section-uniform {
+  min-height: 700px;       /* Alto mínimo uniforme */
+  max-width: 1200px;       /* Máximo ancho para centrar contenido */
+  width: 90%;              /* Ancho responsive */
+  margin: 40px auto;       /* Centrado horizontal con espacio vertical */
+  padding: 40px 20px;      /* Espaciado interno */
+  box-sizing: border-box;  /* Incluye padding en ancho */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--white);
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+/* Contenedor principal */
+.appointment-hero-section {
+  position: relative;
+  height: 100%;  /* Ocupa toda la altura de .section-uniform */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Imagen de fondo */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.7);
+}
+
+/* Overlay para mejorar legibilidad */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg, 
+    rgba(38, 149, 140, 0.3) 0%, 
+    rgba(240, 191, 69, 0.2) 100%
+  );
+}
+
+/* Contenido principal */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  min-height: 70vh;
+}
+
+/* Sección CTA superior */
+.cta-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.cta-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #26958C;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.cta-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #25D366, #128C7E);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+  background: linear-gradient(45deg, #128C7E, #25D366);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  color: white;
+}
+
+/* Sección de ubicación */
+.location-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.location-card {
+  background: rgba(38, 149, 140, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+}
+
+.location-icon-wrapper {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-icon {
+  font-size: 1.5rem;
+  color: #F0BF45;
+}
+
+.location-info {
+  color: white;
+}
+
+.location-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.location-primary {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  color: #F0BF45;
+}
+
+.location-secondary {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-uniform {
+    min-height: auto;
+    max-width: 100%;
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px 10px;
+  }
+
+  .appointment-hero-section {
+    height: auto;
+  }
+  
+  .hero-content {
+    padding: 1rem;
+    gap: 2rem;
+  }
+  
+  .cta-content {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  
+  .cta-title {
+    font-size: 1.5rem;
+  }
+  
+  .cta-subtitle {
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .location-card {
+    padding: 1rem;
+    max-width: 100%;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+  
+  .location-icon-wrapper {
+    padding: 0.8rem;
+  }
+  
+  .location-icon {
+    font-size: 1.2rem;
+  }
+  
+  .location-primary {
+    font-size: 1.1rem;
+  }
+  
+  .location-secondary {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .appointment-hero-section {
+    min-height: 50vh;
+  }
+  
+  .hero-content {
+    min-height: 50vh;
+    padding: 0.8rem;
+  }
+  
+  .cta-content {
+    padding: 1rem;
+  }
+  
+  .cta-title {
+    font-size: 1.3rem;
+  }
+  
+  .location-card {
+    padding: 0.8rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-content, .location-card {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.location-card {
+  animation-delay: 0.2s;
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .cta-content, .location-card {
+    animation: none;
+  }
+  
+  .cta-button {
+    transition: none;
+  }
+}
+</style>

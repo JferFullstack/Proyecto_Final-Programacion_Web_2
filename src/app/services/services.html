@@ -1,0 +1,29 @@
+<div class="nuestros-servicios py-2 py-md-3">
+  <div class="container">
+    <h2 class="text-center display-6 display-md-5 mb-3 mb-md-4">NUESTROS SERVICIOS</h2>
+    
+    <!-- Grid responsivo de servicios -->
+    <div class="row g-3">
+      <div *ngFor="let servicio of servicios" 
+           class="col-12 col-sm-6 col-lg-4">
+        <div class="servicio card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-3 p-md-4">
+            
+            <!-- Icono -->
+            <div class="icono mb-3"
+                 [ngClass]="{'fila-1': servicio.fila === 1, 'fila-2': servicio.fila === 2}">
+              <i class="fa-solid fs-1 d-block mb-3" [ngClass]="servicio.icono"></i>
+            </div>
+            
+            <!-- Título -->
+            <h3 class="fs-5 fw-bold mb-3">{{ servicio.titulo }}</h3>
+            
+            <!-- Descripción -->
+            <p class="fs-6 lh-base text-muted">{{ servicio.descripcion }}</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

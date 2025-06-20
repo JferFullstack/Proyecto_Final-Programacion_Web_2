@@ -1,0 +1,170 @@
+/* src/styles.scss - Archivo principal de estilos globales */
+
+// Importar Bootstrap (nueva sintaxis)
+@use 'bootstrap/scss/bootstrap' as *;
+@use 'sass:color';
+
+// Variables globales del proyecto
+:root {
+  --primary-green: #5fb3a3;
+  --primary-yellow: #f4d03f;
+  --accent-yellow: #f7dc6f;
+  --soft-green: #85c1e9;
+  --text-dark: #2c3e50;
+  --text-light: #34495e;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+}
+
+// Estilos globales
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><text y='24' font-size='24'>🐶</text></svg>") 16 16, auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+// Estilos para scroll suave
+html {
+  scroll-behavior: smooth;
+}
+
+// Utilidades adicionales
+.text-primary-green {
+  color: var(--primary-green) !important;
+}
+
+.text-primary-yellow {
+  color: var(--primary-yellow) !important;
+}
+
+.bg-primary-green {
+  background-color: var(--primary-green) !important;
+}
+
+.bg-primary-yellow {
+  background-color: var(--primary-yellow) !important;
+}
+
+// Animaciones globales
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.bounce-in {
+  animation: bounceIn 0.8s ease-out;
+}
+
+// Responsive utilities
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+// Estilos para botones personalizados
+.btn-primary-green {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+  color: white;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: color.adjust(#5fb3a3, $lightness: -10%);
+    border-color: color.adjust(#5fb3a3, $lightness: -10%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(95, 179, 163, 0.3);
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(95, 179, 163, 0.25);
+  }
+}
+
+.btn-primary-yellow {
+  background-color: var(--primary-yellow);
+  border-color: var(--primary-yellow);
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: color.adjust(#f4d03f, $lightness: -10%);
+    border-color: color.adjust(#f4d03f, $lightness: -10%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(244, 208, 63, 0.3);
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(244, 208, 63, 0.25);
+  }
+}
+
+/* Contenedor que agrupa todas las secciones */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* espacio entre secciones */
+  align-items: center; /* centra horizontalmente las secciones */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 0;
+}
+
+/* Contenedor uniforme para cada sección */
+.section-uniform {
+  min-height: 700px; /* altura mínima para que todas las secciones sean iguales */
+  max-width: 1200px; /* ancho máximo */
+  width: 90%; /* ancho adaptable */
+  margin: 0 auto; /* centrado horizontal */
+  padding: 40px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra contenido verticalmente */
+  background-color: var(--white);
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
