@@ -9,6 +9,10 @@ html, body {
   overflow-x: hidden;
 }
 
+body, * {
+  cursor: url('assets/imagenes/cursor4.png'), auto !important;
+}
+
 /* Contenedor principal */
 app-root {
   display: block;

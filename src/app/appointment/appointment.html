@@ -1,52 +1,70 @@
-<div class="appointment-hero-section">
-  <!-- Imagen de fondo con overlay -->
-  <div class="hero-background">
-    <img 
-      src="assets/imagenes/fondo-cita.png" 
-      alt="Fondo de mascotas" 
-      class="hero-image"
-      loading="lazy"
-    />
-    <div class="hero-overlay"></div>
-  </div>
-  
-  <!-- Contenido principal -->
-  <div class="hero-content">
-    
-    <!-- Sección superior - Botón de agendar -->
-    <div class="cta-section">
-      <div class="cta-content">
-        <h1 class="cta-title">¿Tu mascota necesita atención?</h1>
-        <p class="cta-subtitle">Agenda una consulta a domicilio</p>
-        <a href="https://wa.me/94856737" target="_blank" class="cta-button" rel="noopener">
-          <i class="fab fa-whatsapp me-2"></i>
-          AGENDAR CITA
-        </a>
-      </div>
+<div class="section-uniform">
+  <div class="appointment-hero-section">
+    <!-- Imagen de fondo con overlay -->
+    <div class="hero-background">
+      <img 
+        src="assets/imagenes/fondo-cita.png" 
+        alt="Fondo de mascotas" 
+        class="hero-image"
+        loading="lazy"
+      />
+      <div class="hero-overlay"></div>
     </div>
+    
+    <!-- Contenido principal -->
+    <div class="hero-content">
+      
+      <!-- Sección superior - Botón de agendar -->
+      <div class="cta-section">
+        <div class="cta-content">
+          <h1 class="cta-title">¿Tu mascota necesita atención?</h1>
+          <p class="cta-subtitle">Agenda una consulta a domicilio</p>
+          <a href="https://wa.me/94856737" target="_blank" class="cta-button" rel="noopener">
+            <i class="fab fa-whatsapp me-2"></i>
+            AGENDAR CITA
+          </a>
+        </div>
+      </div>
 
-    <!-- Sección inferior - Información de ubicación -->
-    <div class="location-section">
-      <div class="location-card">
-        <div class="location-icon-wrapper">
-          <i class="fas fa-map-marker-alt location-icon"></i>
-        </div>
-        <div class="location-info">
-          <h3 class="location-title">Área de Cobertura</h3>
-          <p class="location-primary">Valle de Ángeles</p>
-          <p class="location-secondary">Santa Lucía y alrededores</p>
+      <!-- Sección inferior - Información de ubicación -->
+      <div class="location-section">
+        <div class="location-card">
+          <div class="location-icon-wrapper">
+            <i class="fas fa-map-marker-alt location-icon"></i>
+          </div>
+          <div class="location-info">
+            <h3 class="location-title">Área de Cobertura</h3>
+            <p class="location-primary">Valle de Ángeles</p>
+            <p class="location-secondary">Santa Lucía y alrededores</p>
+          </div>
         </div>
       </div>
+      
     </div>
-    
   </div>
 </div>
 
 <style>
+/* Contenedor para tamaño uniforme en todas las secciones */
+.section-uniform {
+  min-height: 700px;       /* Alto mínimo uniforme */
+  max-width: 1200px;       /* Máximo ancho para centrar contenido */
+  width: 90%;              /* Ancho responsive */
+  margin: 40px auto;       /* Centrado horizontal con espacio vertical */
+  padding: 40px 20px;      /* Espaciado interno */
+  box-sizing: border-box;  /* Incluye padding en ancho */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--white);
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
 /* Contenedor principal */
 .appointment-hero-section {
   position: relative;
-  min-height: 70vh;
+  height: 100%;  /* Ocupa toda la altura de .section-uniform */
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -213,13 +231,20 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .section-uniform {
+    min-height: auto;
+    max-width: 100%;
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px 10px;
+  }
+
   .appointment-hero-section {
-    min-height: 60vh;
+    height: auto;
   }
   
   .hero-content {
     padding: 1rem;
-    min-height: 60vh;
     gap: 2rem;
   }
   
