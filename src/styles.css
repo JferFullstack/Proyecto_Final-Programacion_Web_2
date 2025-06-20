@@ -1,0 +1,193 @@
+/* Estilos globales responsivos */
+html, body {
+  margin: 0;
+  padding: 0;
+  padding-top: 60px; /* Altura de navbar fija */
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Contenedor principal */
+app-root {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Eliminar completamente espacios entre secciones */
+#home, #about-us, #appointment, #services, #footer {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.about-us-container,
+.home-container-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.container-fluid {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#appointment {
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+
+#services {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+/* Utilidades responsivas personalizadas */
+@media (max-width: 575.98px) {
+  .display-xs-6 { font-size: 2.5rem; }
+
+  #home, #about-us, #appointment, #services {
+    padding-bottom: 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .display-sm-5 { font-size: 3rem; }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .display-md-5 { font-size: 3rem; }
+}
+
+@media (min-width: 992px) {
+  .display-lg-4 { font-size: 3.5rem; }
+}
+
+/* WhatsApp botón flotante */
+.whatsapp-float-icon {
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Secciones con altura mínima */
+section, div[id] {
+  min-height: fit-content;
+}
+
+/* Mejorar padding en móviles */
+@media (max-width: 768px) {
+  .py-4 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  html, body {
+    padding-top: 70px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .py-md-5 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+}
+
+/* Imágenes responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tamaño de fuentes para mejor legibilidad */
+@media (max-width: 576px) {
+  .fs-6 { font-size: 0.9rem !important; }
+  .fs-5 { font-size: 1rem !important; }
+  .fs-4 { font-size: 1.1rem !important; }
+  .fs-3 { font-size: 1.25rem !important; }
+}
+
+/* Padding en cards para móviles */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1.5rem !important;
+  }
+}
+
+.container, .container-fluid {
+  margin-bottom: 0;
+}
+
+.about-us-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Animación flotante de WhatsApp */
+a.whatsapp-float {
+  animation: whatsappBounce 2s ease-in-out infinite !important;
+  position: fixed !important;
+}
+
+@keyframes whatsappBounce {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.whatsapp-pulse {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  border: 4px solid #25D366 !important;
+  border-radius: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  animation: whatsappPulse 1.5s ease-out infinite !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+.whatsapp-pulse-delayed {
+  animation-delay: 0.7s !important;
+}
+
+a.whatsapp-float:hover {
+  transform: scale(1.2) !important;
+  background-color: #128C7E !important;
+  animation-play-state: paused !important;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-pulse {
+    width: 55px !important;
+    height: 55px !important;
+  }
+}

@@ -1,0 +1,469 @@
+/* src/app/components/inicio/inicio.component.scss */
+
+// Variables de colores
+$primary-green: #5fb3a3;
+$primary-yellow: #f4d03f;
+$accent-yellow: #f7dc6f;
+$soft-green: #85c1e9;
+$text-dark: #2c3e50;
+$text-light: #34495e;
+$white: #ffffff;
+$light-gray: #f8f9fa;
+
+.inicio-container {
+  padding-top: 80px; // Para compensar el navbar fixed
+}
+
+// Navbar Styles
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    
+    .text-logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      
+      .logo-moon {
+        margin-right: 2px;
+      }
+      
+      .logo-pet {
+        color: $primary-yellow;
+      }
+    }
+    
+    .logo-img {
+      height: 45px;  // Ajusta este valor según necesites
+      width: auto;
+      max-width: 150px;  // Límite máximo de ancho
+      object-fit: contain;  // Mantiene proporciones
+    }
+    
+    .brand-text {
+      color: $primary-green;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      
+      .brand-highlight {
+        color: $primary-yellow;
+      }
+    }
+  }
+  
+  .nav-link {
+    font-weight: 500;
+    color: $text-dark !important;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $primary-green !important;
+    }
+    
+    &.active {
+      background-color: $primary-yellow;
+      color: $text-dark !important;
+      border-radius: 20px;
+      padding: 8px 20px !important;
+    }
+    .center-logo-container .center-logo {
+      max-width: 200px;
+      max-height: 80px;
+    }
+  }
+}
+
+// Hero Section
+.hero-section {
+  background: linear-gradient(135deg, $light-gray 0%, $white 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23f4d03f" opacity="0.3"/><circle cx="80" cy="60" r="1.5" fill="%235fb3a3" opacity="0.2"/><circle cx="60" cy="80" r="1" fill="%23f4d03f" opacity="0.4"/></svg>');
+    z-index: 0;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Promotion Banner
+.promotion-banner {
+  background: linear-gradient(135deg, $primary-green 0%, $soft-green 100%);
+  border-radius: 25px;
+  padding: 30px 20px;
+  text-align: center;
+  color: $white;
+  box-shadow: 0 10px 30px rgba(95, 179, 163, 0.3);
+  transform: rotate(-5deg);
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: rotate(-3deg) scale(1.05);
+  }
+  
+  .promotion-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .promotion-text {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .discount-badge {
+    background: $white;
+    color: $primary-green;
+    border-radius: 15px;
+    padding: 10px;
+    display: inline-block;
+    
+    .discount-number {
+      font-size: 2rem;
+      font-weight: bold;
+      display: block;
+    }
+    
+    .discount-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+  }
+}
+
+// Main Content
+.main-content {
+  padding: 40px 0;
+  
+  .main-title {
+    margin-bottom: 15px;  // Reducido de 40px a 15px
+    
+    .title-clinica {
+      display: block;
+      font-size: 3rem;
+      font-weight: 900;
+      color: $primary-green;
+      margin-bottom: 5px;  // Reducido de 10px a 5px
+    }
+    
+    .title-veterinaria {
+      display: block;
+      font-size: 3rem;
+      font-weight: 900;
+      color: $primary-yellow;
+      margin-bottom: 5px;  // Reducido de 10px a 5px
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .title-brand {
+      display: block;
+      font-size: 2rem;
+      font-weight: 600;
+      color: $soft-green;
+      letter-spacing: 2px;
+    }
+    
+    .title-brand-fallback {
+      display: block;
+      font-size: 2rem;
+      font-weight: 600;
+      color: $soft-green;
+      letter-spacing: 2px;
+    }
+  }
+  
+  // Logo Central Container
+  .center-logo-container {
+    margin: 10px 0 30px 0;  // Reducido margen superior de 30px a 10px
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .center-logo {
+      max-width: 300px;
+      max-height: 120px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// Pets Container
+.pets-container {
+  margin: 40px 0;
+  
+  .pet-circle {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, $accent-yellow 0%, $primary-yellow 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 40px rgba(244, 208, 63, 0.4);
+    
+    .pet-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid $white;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+      
+      &.cat-img {
+        position: absolute;
+        left: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      
+      &.dog-img {
+        position: absolute;
+        right: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+// Schedule Container
+.schedule-container {
+  background: $white;
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid $primary-green;
+  
+  .schedule-title {
+    margin-bottom: 25px;
+    text-align: center;
+    
+    .schedule-horario {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $primary-green;
+    }
+    
+    .schedule-atencion {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: $primary-yellow;
+    }
+  }
+  
+  .schedule-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, $light-gray 0%, $white 100%);
+    border-radius: 10px;
+    border-left: 3px solid $primary-yellow;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    .schedule-days {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: $text-dark;
+      margin-bottom: 5px;
+    }
+    
+    .schedule-hours {
+      font-size: 1rem;
+      color: $text-light;
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 992px) {
+  .hero-section {
+    .promotion-banner {
+      transform: rotate(0deg);
+      margin-bottom: 30px;
+    }
+    
+    .main-content .main-title {
+      .title-clinica {
+        font-size: 2.5rem;
+      }
+      
+      .title-veterinaria {
+        font-size: 3rem;
+      }
+      
+      .title-brand {
+        font-size: 1.5rem;
+      }
+    }
+    
+    .pets-container .pet-circle {
+      width: 350px;
+      height: 250px;
+      
+      .pet-img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    
+    .schedule-container {
+      margin-top: 30px;
+    }
+    
+    .center-logo-container .center-logo {
+      max-width: 250px;
+      max-height: 100px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content .main-title {
+    .title-clinica {
+      font-size: 2rem;
+    }
+    
+    .title-veterinaria {
+      font-size: 2.5rem;
+    }
+    
+    .title-brand {
+      font-size: 1.3rem;
+    }
+  }
+  
+  .pets-container .pet-circle {
+    width: 300px;
+    height: 200px;
+    
+    .pet-img {
+      width: 100px;
+      height: 100px;
+      
+      &.cat-img {
+        left: 30px;
+      }
+      
+      &.dog-img {
+        right: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .inicio-container {
+    padding-top: 70px;
+  }
+  
+  .navbar .navbar-brand {
+    font-size: 1.2rem;
+    
+    .logo-img {
+      height: 30px;
+    }
+  }
+  
+  .promotion-banner {
+    padding: 20px 15px;
+    
+    .promotion-title {
+      font-size: 1.5rem;
+    }
+    
+    .discount-badge .discount-number {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .main-content .main-title {
+    .title-clinica {
+      font-size: 1.8rem;
+    }
+    
+    .title-veterinaria {
+      font-size: 2.2rem;
+    }
+    
+    .title-brand {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .pets-container .pet-circle {
+    width: 250px;
+    height: 180px;
+    
+    .pet-img {
+      width: 80px;
+      height: 80px;
+      
+      &.cat-img {
+        left: 20px;
+      }
+      
+      &.dog-img {
+        right: 20px;
+      }
+    }
+  }
+  
+  .center-logo-container .center-logo {
+    max-width: 180px;
+    max-height: 70px;
+  }
+  
+  .schedule-container {
+    padding: 20px 15px;
+    
+    .schedule-title {
+      .schedule-horario {
+        font-size: 1.5rem;
+      }
+      
+      .schedule-atencion {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

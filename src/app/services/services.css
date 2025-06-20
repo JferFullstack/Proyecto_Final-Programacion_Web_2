@@ -1,0 +1,66 @@
+.nuestros-servicios {
+  padding: 2rem;
+  text-align: center;
+
+  h2 {
+    color: #4AA49C; /* Color verde azulado para el título */
+    font-family: 'Kanit Regular', Helvetica, sans-serif; /* Ajusta a tu fuente real */
+    font-size: 3rem; /* Tamaño del título */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left; /* Título alineado a la izquierda */
+    border-bottom: 2px solid #ffffff; /* Línea decorativa debajo del título */
+    padding-bottom: 10px;
+    display: inline-block; 
+  }
+
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 2rem;
+    max-width: 100%;
+  }
+
+  .servicio {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .icono {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+
+      i {
+        color: #3fb81a;
+      }
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+    .icono {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .icono.fila-1 i {
+      color: #f0bf45; 
+    }
+
+    .icono.fila-2 i {
+      color: #4aa49c; 
+    }
+  }
+}
