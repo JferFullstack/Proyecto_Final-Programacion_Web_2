@@ -1,0 +1,125 @@
+.cita-container {
+    position: relative;
+    width: 1920px; /* Ancho ajustable */
+    height: 700px; /* Alto ajustable */
+    background-color: #F8D568; /* Color de fondo similar al de la imagen */
+    overflow: hidden; /* Asegura que la imagen de fondo no se desborde */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Sombra sutil */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    /* filter: brightness(0.8); */ /* Opcional: Oscurece un poco la imagen para que el texto resalte */
+}
+
+/* Si usas una imagen PNG para el efecto de rasgado y el gatito, añádele estos estilos */
+/* .torn-paper-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    height: auto;
+    z-index: 3;
+} */
+
+.content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px; /* Espaciado interno */
+    z-index: 2; /* Asegura que el contenido esté por encima de la imagen */
+}
+
+.top-left-section {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre el icono de WhatsApp y el botón */
+    
+    /* ***** CAMBIOS AQUÍ ***** */
+    margin-top: 30px;  /* Empuja la sección 30px hacia abajo */
+    margin-left: 30px; /* Empuja la sección 30px hacia la derecha */
+    /* Puedes ajustar estos valores según cuánto quieras moverlo */
+}
+
+.whatsapp-icon-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #4AB2B2; /* Color turquesa similar al de la imagen */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-agenda {
+    background-color: #4AB2B2; /* Color turquesa similar al de la imagen */
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px; /* Botón redondeado */
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-agenda:hover {
+    background-color: #3a9797; /* Un tono más oscuro al pasar el ratón */
+    color: white;
+}
+
+.bottom-right-section {
+    align-self: flex-end; /* Alinea a la derecha en el contenedor flex-column */
+    text-align: right;
+    color: #333; /* Color de texto */
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.location-text {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el icono de ubicación y el texto */
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    color: #ffffff;
+}
+
+.location-icon {
+    color: #ffffff; /* Color del icono de ubicación */
+    font-size: 2rem;
+}
+
+.location-details {
+    display: flex;       /* Mantén esto para la columna */
+    flex-direction: column; /* Esto apila los spans uno debajo del otro */
+    align-items: flex-end; /* Alinea el texto a la derecha */
+}
+
+.main-location {
+    display: block; /* Asegura que tome toda la línea disponible */
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.sub-location {
+    display: block; /* Asegura que tome toda la línea disponible */
+    font-size: 0.95rem;
+    line-height: 1.2;
+    color: #fffefe;
+    margin-top: 2px; /* Pequeño margen superior para separar si lo deseas */
+}
