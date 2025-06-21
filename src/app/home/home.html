@@ -24,7 +24,7 @@
 
     <!-- Imagen de fondo de mascotas - Separada de la orilla -->
     <div class="position-absolute d-none d-xl-block" 
-         style="top: 190px; left: 20px; z-index: 0; pointer-events: none; width: 60%;">
+         style="top: 190px; left: 120px; z-index: 0; pointer-events: none; width: 60%;">
       <div class="d-flex justify-content-start align-items-start h-100">
         <img
           src="assets/imagenes/Perro_gato.png"
@@ -38,10 +38,11 @@
     <!-- Tarjeta de horarios - TAMAÑO AUMENTADO -->
     <div class="position-absolute d-none d-xl-block" 
          style="top: 210px; right: 150px; z-index: 10;">
-      <div class="card border-0 shadow-lg" style="width: 350px;">
+      <div class="card border-0 shadow-lg" style="width: 450px;">
         <div class="card-header text-white text-center py-4 border-0" style="background-color: #26958C;">
           <i class="bi bi-clock fs-1 d-block mb-2"></i>
           <h5 class="card-title fw-bold mb-0">Horario de atención</h5>
+          <h5 class="card-title fw-bold mb-0">a domicilio</h5>
         </div>
         <div class="card-body bg-white text-center py-4">
           <div *ngFor="let schedule of businessHours" class="mb-3">
