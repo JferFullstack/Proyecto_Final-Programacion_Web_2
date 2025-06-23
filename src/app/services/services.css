@@ -1,66 +1,129 @@
-.nuestros-servicios {
-  padding: 2rem;
-  text-align: center;
+/* src/app/nuestros-servicios/nuestros-servicios.component.css (o .scss) */
 
-  h2 {
-    color: #4AA49C; /* Color verde azulado para el título */
-    font-family: 'Kanit Regular', Helvetica, sans-serif; /* Ajusta a tu fuente real */
-    font-size: 3rem; /* Tamaño del título */
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: left; /* Título alineado a la izquierda */
-    border-bottom: 2px solid #ffffff; /* Línea decorativa debajo del título */
-    padding-bottom: 10px;
-    display: inline-block; 
+/* Contenedor principal similar a .about-us-container */
+.nuestros-servicios-container {
+  position: relative;
+  width: 100%;
+  padding: 80px 0; /* Mayor espaciado vertical, similar a about-us */
+  background-color: var(--white); /* Fondo blanco, asumiendo --white definido globalmente */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra sutil como en section-uniform */
+}
+
+.nuestros-servicios-content {
+  position: relative;
+  z-index: 2; /* Asegura que el contenido esté sobre cualquier fondo/overlay */
+  padding: 20px 0; /* Espaciado interno dentro del container */
+}
+
+
+/* Título de la sección "NUESTROS SERVICIOS" */
+.section-title { /* Aquí se aplicarán los estilos del h2 del HTML */
+  color: #4AA49C; /* Color verde azulado para el título */
+  font-family: 'Kanit Regular', Helvetica, sans-serif; /* Ajusta a tu fuente real */
+  font-size: 3rem; /* Tamaño del título */
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--color-secondary-yellow); /* Línea decorativa debajo del título, con color amarillo */
+  padding-bottom: 10px;
+  display: inline-block; /* Para que la línea solo ocupe el ancho del texto */
+}
+
+
+/* Tarjetas de servicio */
+.servicio.card { /* Usando .servicio .card para ser más específico con las clases de Bootstrap */
+  background: white; /* Fondo blanco para las tarjetas */
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil como en About Us / Misión-Visión */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones para el hover */
+  border: none; /* Eliminar borde predeterminado de Bootstrap card */
+  height: 100%; /* Asegura que todas las tarjetas tengan la misma altura en una fila flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  text-align: center; /* Alinea el texto centralmente */
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hover */
   }
 
-  .servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-    gap: 2rem;
-    max-width: 100%;
+  .card-body {
+    flex-grow: 1; /* Permite que el cuerpo ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra contenido del body */
+    align-items: center;
+    padding: 1rem; /* Ajusta el padding si es necesario */
   }
 
-  .servicio {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+  /* --- INICIO DEL BLOQUE DE ÍCONOS (NO TOCADO) --- */
+  .icono {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 
-    &:hover {
-      transform: translateY(-5px);
+    i {
+      color: #3fb81a;
     }
+  }
 
-    .icono {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+  .icono.fila-1 i {
+    color: #f0bf45;
+  }
 
-      i {
-        color: #3fb81a;
-      }
-    }
+  .icono.fila-2 i {
+    color: #4aa49c;
+  }
 
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
+  .icono.fila-3 i {
+    color: #f0bf45;
+  }
+  /* --- FIN DEL BLOQUE DE ÍCONOS (NO TOCADO) --- */
 
-    p {
-      font-size: 0.95rem;
-      color: #666;
-    }
-    .icono {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .icono.fila-1 i {
-      color: #f0bf45; 
-    }
 
-    .icono.fila-2 i {
-      color: #4aa49c; 
-    }
+  h3 {
+    font-size: 1.4rem; /* Un poco más grande para el título del servicio */
+    font-weight: 700; /* Más negrita */
+    color: var(--text-dark); /* Color de texto oscuro, asumiendo --text-dark definido globalmente */
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    font-size: 1rem; /* Tamaño de descripción */
+    color: #666;
+    line-height: 1.5;
+  }
+}
+
+/* ------------------- RESPONSIVIDAD ------------------- */
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .servicio.card {
+    padding: 1rem;
+    min-height: auto; /* Permite que se ajuste en móviles */
+  }
+
+  .icono { /* Este ya está en tu bloque no tocado, pero si necesitas override, hazlo aquí */
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 2rem;
   }
 }

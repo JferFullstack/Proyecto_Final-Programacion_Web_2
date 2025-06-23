@@ -47,6 +47,13 @@ export class Services {
       descripcion: 'Limpieza y cuidado dental especializado para prevenir enfermedades orales y mantener una boca saludable en tu mascota.',
       icono: 'fa-tooth',
       fila: 2
+    },
+    {
+      titulo: 'Trámite de exportación',
+      descripcion: '¿Vas de viaje a Estados Unidos, Europa u otro país? No te preocupes, nosotros te ayudamos para que lleves a tu mascota de viaje.',
+      icono: 'fa-plane-departure',
+      fila: 3
     }
+
   ];
 }

@@ -15,8 +15,8 @@ export class Home {
       hours: "8:00 AM | 5:00 PM",
     },
     {
-      days: "Sábado a Domingo",
-      hours: "1:00 PM | 4:00 PM",
+      days: "Sábado",
+      hours: "8:30 AM | 12:00 PM",
     },
   ];
 

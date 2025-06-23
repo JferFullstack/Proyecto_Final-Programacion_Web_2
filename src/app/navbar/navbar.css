@@ -7,14 +7,23 @@
   
 }
 
-
-
 .navbar-nav .nav-link {
-  font-size: 18px;
+  font-size: 21px;
+  background-color: #f3f2ed;
   color: black !important;
-  padding: 8px 16px;              
-  border-radius: 10px;            
-  transition: background-color 0.3s, color 0.3s; 
+  padding: 8px 8px;
+  border-radius: 10px;
+  transition: background-color 0.2s;
+
+  /* AÑADE ESTO para espacio a la derecha de cada botón */
+  margin-right: 15px; /* Prueba con un valor como 10px, 15px, 20px */
+  display: inline-block; /* Crucial para que min-width y text-align funcionen en un nav-link */
+
+}
+
+/* Opcional: Elimina el margen del último elemento para que no haya un espacio extra innecesario */
+.navbar-nav .nav-item:last-child .nav-link {
+  margin-right: 0;
 }
 
 .navbar-nav .nav-link:hover {

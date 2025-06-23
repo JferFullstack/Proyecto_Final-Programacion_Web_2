@@ -7,17 +7,20 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrl: './whatsapp-button.css'
 })
 export class WhatsappButton implements OnInit {
-  @Input() phoneNumber: string = '+50496042315'; 
-  @Input() message: string = 'Hola, estoy interesado en sus servicios. ¿Podrían brindarme más información?'; 
+  private _phoneNumber: string = '50496042315'; 
+  private _message: string = 'Hola, me sitio en Valle de Ángeles. ¿Podrían brindarme más información?';
+
+  @Input() buttonText: string = 'AGENDAR CITA'; 
 
   whatsappLink: string = '';
 
   ngOnInit(): void {
-    this.whatsappLink = this.generateWhatsappLink(this.phoneNumber, this.message);
+    this.whatsappLink = this.generateWhatsappLink(this._phoneNumber, this._message);
   }
 
   private generateWhatsappLink(phoneNumber: string, message: string): string {
     const encodedMessage = encodeURIComponent(message);
-    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    const formattedPhoneNumber = phoneNumber.startsWith('+') ? phoneNumber : `+${phoneNumber}`;
+    return `https://wa.me/${formattedPhoneNumber}?text=${encodedMessage}`;
   }
 }

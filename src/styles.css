@@ -1,18 +1,26 @@
 
 /* src/styles.css */
 
-/* --- RESET BÁSICO Y ESTILOS GLOBALES --- */
-
-body, * {
-  cursor: url('assets/imagenes/cursor2.png'), auto !important;
+/* Aplica esto a cada sección principal a la que tu navbar redirige */
+#home,
+#about-us,
+#appointment,
+#services,
+#footer { /* Añade todos los IDs de tus secciones principales aquí */
+  scroll-margin-top: 100px; /* <--- ¡USA LA ALTURA EXACTA DE TU NAVBAR AQUÍ! */
+                            /* Esto le dice al navegador que deje 140px de espacio arriba al hacer scroll */
 }
 
+/* --- RESET BÁSICO Y ESTILOS GLOBALES --- */
+
 html, body {
+  padding-top: 240px;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%; /* Asegura que html y body ocupen la altura completa */
   overflow-x: hidden; /* Evita scroll horizontal */
+  cursor: url('assets/imagenes/cursor2.png'), auto !important;
 }
 
 
@@ -22,6 +30,12 @@ html, body {
   height: 900px; /* Ojo si este height fijo causa problemas de overflow */
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.navbar-top-spacer {
+  height: 140px; /* <--- ¡USA AQUÍ LA ALTURA EXACTA QUE MEDISTE PARA TU NAVBAR! */
+  width: 100%;
+  /* background-color: rgba(255, 0, 0, 0.2); */ /* Descomenta para depurar y ver el espaciador */
 }
 
 /* --- ESTILOS DE COLORES PERSONALIZADOS --- */

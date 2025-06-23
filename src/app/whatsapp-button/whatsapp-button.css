@@ -56,7 +56,7 @@ a.whatsapp-float {
 /* Hover effect más obvio */
 a.whatsapp-float:hover {
   transform: scale(1.2) !important;
-  background-color: #128C7E !important;
+  background-color: #f0bf45 !important;
   animation-play-state: paused !important;
 }
 

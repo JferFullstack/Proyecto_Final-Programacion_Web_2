@@ -1,172 +1,204 @@
-/* Contenedor principal que envuelve todo el área de contenido de la página */
+/*
+ *******************************************************************************
+ * ARCHIVO: src/styles.css (o src/app/home/home.component.css)               *
+ * DESCRIPCIÓN: Estilos CSS para la sección "Home" o Landing Page.           *
+ * Este CSS ha sido limpiado, organizado y unificado para evitar duplicaciones. *
+ *******************************************************************************
+*/
+
+/* ========================================================================== */
+/* 1. ESTILOS GLOBALES Y CONTENEDOR PRINCIPAL (.home-container-wrapper)      */
+/* ========================================================================== */
+
 .home-container-wrapper {
-  /* Elimina el padding-top si lo habías añadido. No es necesario aquí para este problema específico. */
-  /* padding-top: 82px;  <--- ¡ELIMINA O COMENTA ESTA LÍNEA! */
-
-  min-height: calc(100vh - 82px); /* Esto es la altura *disponible* para el contenido debajo del navbar */
-  position: relative; /* ¡Esencial! Los elementos con position:absolute se posicionan respecto a este. */
-  
-  margin-top: 100px; /* <<< ¡AÑADE ESTA LÍNEA! >>> */
-                     /* Esto empuja todo el *contenedor* .home-container-wrapper hacia abajo,
-                        dejando espacio libre para el navbar fijo en la parte superior. */
-
-  background-color: white;
+  margin-top: 100px;
+  min-height: calc(100vh - 105px);
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   overflow: hidden;
   width: 100%;
-  /* border: 2px solid red; */ /* Mantenlo si sigues depurando */
 }
-/* Área de contenido que tendrá el tamaño fijo de tu diseño */
+
 .home-content-area {
-  max-width: 1920px; 
-  height: 900px;
+  max-width: 1920px;
+  width: 100%;
+  height: 100%;
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  position: relative;
 }
 
-/* ------------------- COLORES PERSONALIZADOS ------------------- */
-.text-custom-clinic {
-  color: #4aa49c; /* Verde del título "CLÍNICA" */
-  -webkit-text-stroke: 1px rgba(229, 255, 252, 0.07); /* Borde claro */
-  text-shadow: 0 0 1px rgba(229, 255, 252, 0.07);
-  font-family: 'Kanit Regular', Helvetica, sans-serif;
-  font-size: 4.5rem; /* 96px */
-  line-height: 1; /* Para controlar el espaciado de línea */
+
+/* ========================================================================== */
+/* 2. CONTENEDOR INFERIOR FLEXBOX (.bottom-content-wrapper)                  */
+/* (MOBILE-FIRST: Apilado verticalmente y fluye normalmente en móvil)       */
+/* ========================================================================== */
+.bottom-content-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* CLAVE PARA MÓVILES: Apila los ítems verticalmente */
+  align-items: center;   /* Centra los ítems horizontalmente cuando están apilados */
+  
+  /* Márgenes y padding para separación general en móviles */
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
-.text-custom-veterinary {
-  color: #f0bf45; /* Amarillo del título "VETERINARIA" */
-  font-family: 'Kanit Regular', Helvetica, sans-serif;
-  font-size: 4.5rem; /* 96px */
-  line-height: 1;
-}
 
-.bg-custom-green {
-  background-color: #4aa49c !important; /* Verde de la tarjeta de horario */
-}
-
-.text-custom-yellow {
-  color: #f0bf45 !important; /* Amarillo de la tarjeta de horario e iconos */
-}
-
-/* ------------------- SECCIÓN TÍTULOS Y LOGO SUPERIOR ------------------- */
-.title-logo-section {
-  position: absolute;
-  top: 10px; /* Mantén o ajusta la posición vertical */
-  left: 60%; /* <--- Cambia este valor para moverlo a la derecha (por ejemplo, 70%, 80%, etc.) */
-  transform: translateX(-50%); /* Mantiene el centro del div en el 70% o el valor que pongas en left */
-  z-index: 20;
-  width: 900px; /* Asegúrate de que el ancho sea suficiente */
-  text-align: center;
-}
-.logo-top-main {
-  width: 1200px; /* Ancho del logo "Moon Pet City" superior */
+/* ========================================================================== */
+/* 3. IMAGEN UNIFICADA DE PERRO Y GATO (.unified-dog-cat-img)                */
+/* ========================================================================== */
+.unified-dog-cat-img {
+  display: block;
+  margin: 30px auto 0 auto; /* Centrado y con margen superior en móvil */
+  width: 90%;
+  max-width: 400px;
   height: auto;
-  margin-top: -1rem; /* Espacio debajo de los títulos */
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* ------------------- SECCIÓN IMÁGENES DE MASCOTAS Y FONDO ------------------- */
-.pet-background-section {
-  z-index: 5;
-  /* Estas propiedades ya hacen que el contenedor ocupe todo el ancho/alto */
-  /* Si ya está `w-100` y `h-100` en el HTML, no necesitas más aquí para el contenedor */
+.unified-dog-cat-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 300px;
 }
 
-/* Ahora, el bloque para tu imagen dog-cat-combined-img */
-.dog-cat-combined-img {
-  position: absolute;
-  
-  /* >>> ESTE ES EL CAMBIO CLAVE: Usa 'bottom' en lugar de 'top' <<< */
-  bottom: 0;   /* Esto pegará el borde inferior de la imagen al borde inferior de .home-container-wrapper. */
-               /* Si quieres un pequeño espacio debajo, puedes usar 'bottom: 20px;' o el valor que desees. */
-  
-  left: 0;     /* Esto lo pega a la izquierda (ajusta si quieres moverlo horizontalmente) */
-  
-  width: 50%;  /* Haz el ancho responsivo al 50% de su contenedor */
-  max-width: 900px; /* Limita el tamaño máximo en pantallas muy grandes */
-  height: auto; /* Mantiene la proporción de la imagen automáticamente */
-  
-  z-index: 1; /* Asegura el orden de las capas */
+
+/* ========================================================================== */
+/* 4. TARJETA DE HORARIOS UNIFICADA (.horarios-card-unified)                 */
+/* ========================================================================== */
+.horarios-card-unified {
+  width: 90%;
+  max-width: 450px;
+  margin: 20px auto; /* Centrado y con margen superior/inferior en móvil */
+  z-index: 10;
+  box-shadow: 0 0.75rem 1rem rgba(142, 143, 113, 0.514);
 }
 
-/* Y si tienes la imagen interna, asegúrate de que también se adapte a su contenedor: */
-.dog-cat-combined-img img {
-    max-width: 100%;
+.horarios-card-unified .card {
+  width: 100%;
+}
+
+.horarios-card-unified .card-header {
+  background-color: #26958C;
+}
+
+/* ========================================================================== */
+/* 5. MEDIA QUERIES (RESPONSIVIDAD)                                          */
+/* ========================================================================== */
+
+/* --- PARA PANTALLAS GRANDES (Desktop, >= 1200px) --- */
+@media (min-width: 1200px) { /* Bootstrap 'xl' breakpoint */
+
+  .logo-top-main {
+    max-width: 600px;
+    width: 90%;
+  }
+
+  /* Contenedor Flexbox para el contenido inferior (en Desktop) */
+  .bottom-content-wrapper {
+    position: absolute; /* Flota en la parte inferior de la página */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    flex-direction: row; /* Vuelve a poner los ítems en una fila en desktop */
+    justify-content: space-between; /* Coloca un ítem a la izquierda y otro a la derecha */
+    
+    align-items: flex-end; /* Alinea los ítems a su parte inferior (misma altura) */
+    
+    padding: 0 80px; /* Más padding para desktop */
+
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Ajustes de tamaño y posicionamiento de imagen en desktop */
+  .unified-dog-cat-img {
+    position: static;
+    margin: 0;
+    width: clamp(600px, 50vw, 650px);
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
+
+  .unified-dog-cat-img img {
+    width: 100%;
     height: auto;
     object-fit: contain;
-    margin-top: 200px;
+    max-height: none;
+  }
+  
+  /* Ajustes de tamaño y posicionamiento de tarjeta en desktop */
+  .horarios-card-unified {
+    position: static;
+    margin: 0 0 110px 0; /* Margen inferior para elevarla si es necesario */
+    width: 450px;
+  }
 }
 
-/* ------------------- SECCIÓN TARJETA DE HORARIO ------------------- */
-.hours-card-container {
-  width: 450px;
-  top: 500px; /* <--- Aumenta este valor para bajar más la tarjeta. Actualmente está en 400px. */
-  right: 150px; /* Mantén o ajusta la posición horizontal si es necesario */
-  z-index: 25;
-  box-shadow: 0 0.75rem 1.rem rgba(253, 255, 153, 0.514);
-  position: relative; /* ¡Importante para el corazón decorativo si lo posicionas relativo! */
+/* --- PARA PANTALLAS MEDIANAS (Tablets y Laptops pequeñas, < 1200px) --- */
+@media (max-width: 1199.98px) {
+  .logo-top-main {
+    max-width: 500px;
+    width: 80%;
+  }
+  /* Cambio CLAVE aquí para pantallas medianas/pequeñas */
+  .text-custom-veterinary {
+    margin-left: 0 !important; /* Asegura que no haya un margen izquierdo excesivo */
+    display: block; /* Fuerza a "VETERINARIA" a una nueva línea */
+  }
 }
 
-/* No necesitamos card-body ni card-header con clases custom, Bootstrap ya las maneja */
-/* El padding y margin se manejan con clases de Bootstrap (p-0, py-3, py-4) */
-
-/* ------------------- ICONOS FLOTANTES ------------------- */
-/* ------------------- COLORES PERSONALIZADOS ------------------- */
-/* ... tus colores existentes ... */
-.text-custom-yellow {
-  color: #f0bf45 !important; /* Amarillo mostaza para el fondo del icono de WhatsApp */
-}
-.text-custom-teal { /* Asegúrate de que este color verde azulado esté definido si no lo está ya */
-  color: #4aa49c !important; /* Verde azulado para el icono de WhatsApp */
-}
-
-
-
-.text-custom-clinic {
-  font-size: 2.5rem; /* El tamaño base para desktop */
-  /* ... otros estilos ... */
-}
-
-.text-custom-veterinary {
-  font-size: 2.5rem; /* El tamaño base para desktop */
-  /* ... otros estilos ... */
-}
-
-/* --- Media Queries para Teléfonos y Tablets --- */
-
-/* Para pantallas medianas (tablets en modo retrato, móviles grandes) */
-@media (max-width: 991.98px) { /* Bootstrap 'md' breakpoint */
+/* --- PARA PANTALLAS PEQUEÑAS (Móviles, < 992px) --- */
+@media (max-width: 991.98px) {
   .text-custom-clinic,
   .text-custom-veterinary {
-    font-size: 2.2rem; /* Reduce un poco el tamaño */
+    font-size: 2.2rem;
   }
+  .logo-top-main {
+    max-width: 400px;
+    width: 75%;
+  }
+  /* Solo si no lo has puesto ya en 1199.98px */
+  /* .text-custom-veterinary {
+    margin-left: 0 !important;
+    display: block;
+  } */
 }
 
-/* Para pantallas pequeñas (móviles en general) */
-@media (max-width: 767.98px) { /* Bootstrap 'sm' breakpoint */
+/* --- PARA PANTALLAS MUY PEQUEÑAS (Móviles, < 768px) --- */
+@media (max-width: 767.98px) {
   .text-custom-clinic,
   .text-custom-veterinary {
-    font-size: 0.8rem; /* Reduce más el tamaño */
-    /* Si aún se corta, puedes probar con 1.6rem o 1.5rem */
+    font-size: 1.8rem;
+  }
+  .logo-top-main {
+    max-width: 300px;
+    width: 70%;
   }
 }
 
-/* Para pantallas muy pequeñas (móviles antiguos o muy estrechos) */
-@media (max-width: 575.98px) { /* Bootstrap 'xs' breakpoint */
+/* --- PARA PANTALLAS EXTREMADAMENTE PEQUEÑAS (Móviles muy estrechos, < 576px) --- */
+@media (max-width: 575.98px) {
   .text-custom-clinic,
   .text-custom-veterinary {
-    font-size: 0.8rem; /* Un tamaño aún más pequeño */
+    font-size: 1.5rem;
+  }
+  /* Este ya lo tenías, ahora lo movemos a una media query más amplia para que cubra más móviles */
+  /* .text-custom-veterinary {
+    margin-left: 0 !important;
+    display: block;
+  } */
+  .logo-top-main {
+    max-width: 250px;
+    width: 65%;
   }
 }
-
-/* Si quieres que el texto "VETERINARIA" se vaya a una nueva línea si el ancho es muy reducido: */
-/*
-@media (max-width: 400px) { // Un breakpoint arbitrario, ajusta según necesidad
-  .text-custom-veterinary {
-    margin-left: 0 !important; // Quita el espacio a la izquierda para que se vea abajo
-    display: block; // Asegura que ocupe toda la línea disponible
-  }
-}
-*/

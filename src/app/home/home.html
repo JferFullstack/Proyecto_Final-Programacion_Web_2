@@ -1,68 +1,39 @@
 <div class="home-container-wrapper" style="margin: 1; padding: 0; height: auto;">
-  <div class="container-fluid p-0 position-relative" style="margin: 0; height: auto; min-height: 500px;">
-
-<!-- Contenido principal - Sin padding bottom -->
-<div class="container-fluid" style="margin: 0; padding: 5px 0;">
-  <div class="row justify-content-center" style="margin: 0;">
-    <div class="col-12 text-center">
-      <!-- Título único con diferentes colores -->
-      <h5 class="fw-normal mb-4">
-        <span class="text-custom-clinic" style="font-size: 2.5rem;">CLÍNICA</span>
-        <span class="text-custom-veterinary ms-2" style="font-size: 2.5rem;">VETERINARIA</span>
-    </h5>
-          
-      <!-- Logo grande -->
-      <img
-        src="assets/imagenes/Logo_Moon_Pet_City-sin_fondo.png"
-        alt="Moon Pet City"
-        class="img-fluid logo-top-main"
-        style="max-width: 600px; width: 90%; margin-bottom: 0;"
-      />
-    </div>
-  </div>
-</div>
-
-    <!-- Imagen de fondo de mascotas - Separada de la orilla -->
- <div class="position-absolute d-none d-xl-block dog-cat-combined-img"
-     style="pointer-events: none;">
-    <div class="d-flex justify-content-start align-items-start h-100">
-      <img
-        src="assets/imagenes/Perro_gato.png"
-        alt="Perro y Gato"
-        class="img-fluid"
-        style="object-fit: contain;"
-      />
-    </div>
-  </div>
-
-    <!-- Tarjeta de horarios - TAMAÑO AUMENTADO -->
-    <div class="position-absolute d-none d-xl-block" 
-         style="top: 210px; right: 150px; z-index: 10;">
-
-      <div class="card border-0 shadow-lg" style="width: 450px;">
-        <div class="card-header text-white text-center py-4 border-0" style="background-color: #26958C;">
-          <i class="bi bi-clock fs-1 d-block mb-2"></i>
-          <h5 class="card-title fw-bold mb-0">Horario de atención a domicilio</h5>
-        </div>
-        <div class="card-body bg-white text-center py-4">
-          <div *ngFor="let schedule of businessHours" class="mb-3">
-            <p class="mb-0 fw-bold text-dark fs-5">{{ schedule.days }}</p>
-            <p class="mb-0 text-muted fs-6">{{ schedule.hours }}</p>
-          </div>
+  <div class="container-fluid p-0 position-relative" style="margin: 0; height: auto;">
+    <div class="container-fluid" style="margin: 0; padding: 5px 0;">
+      <div class="row justify-content-center" style="margin: 0;">
+        <div class="col-12 text-center">
+          <h5 class="fw-normal mb-4">
+            <span class="text-custom-clinic" style="font-size: 3rem;">CLÍNICA</span>
+            <span class="text-custom-veterinary ms-2" style="font-size: 3rem;">VETERINARIA</span>
+          </h5>
+          <img
+            src="assets/imagenes/Logo_Moon_Pet_City-sin_fondo.png"
+            alt="Moon Pet City"
+            class="img-fluid logo-top-main"
+            style="max-width: 750px; width: 90%; margin-bottom: 0;"
+          />
         </div>
       </div>
     </div>
 
-    <!-- Horarios para móviles y tablets - TAMAÑO AUMENTADO -->
-    <div class="container d-xl-none" style="margin: 0; padding: 0 15px 20px 15px;">
-      <div class="row justify-content-center" style="margin: 0;">
-        <div class="col-11 col-md-8 col-lg-6">
-          <div class="card border-0 shadow" style="z-index: 10; position: relative; margin-bottom: 0;">
-            <div class="card-header text-white text-center py-4" style="background-color: #26958C;">
-              <i class="bi bi-clock fs-2 d-block mb-2"></i>
-              <h5 class="card-title fw-bold mb-0">Horario de atención</h5>
+    <div class="bottom-content-wrapper">
+        <div class="unified-dog-cat-img" style="pointer-events: none;">
+          <img
+            src="assets/imagenes/Perro_gato.png"
+            alt="Perro y Gato"
+            class="img-fluid"
+            style="object-fit: contain;"
+          />
+        </div>
+
+        <div class="horarios-card-unified" style="z-index: 10">
+          <div class="card border-0 shadow-lg" style="width: 100%;">
+            <div class="card-header text-white text-center py-4 border-0" style="background-color: #26958C;">
+              <i class="bi bi-clock fs-1 d-block mb-2"></i>
+              <h5 class="card-title fw-bold mb-0">Horario de atención a domicilio</h5>
             </div>
-            <div class="card-body text-center py-4">
+            <div class="card-body bg-white text-center py-4">
               <div *ngFor="let schedule of businessHours" class="mb-3">
                 <p class="mb-0 fw-bold text-dark fs-5">{{ schedule.days }}</p>
                 <p class="mb-0 text-muted fs-6">{{ schedule.hours }}</p>
@@ -70,20 +41,8 @@
             </div>
           </div>
         </div>
-      </div>
-      
-      <!-- Imagen perro_gato para móviles - Debajo de horarios -->
-      <div class="row justify-content-center mt-3" style="margin: 0;">
-        <div class="col-8 text-center">
-          <img
-            src="assets/imagenes/Perro_gato.png"
-            alt="Perro y Gato"
-            class="img-fluid"
-            style="max-height: 250px; width: auto; object-fit: contain;"
-          />
-        </div>
+
+        
       </div>
     </div>
-
-  </div>
 </div>

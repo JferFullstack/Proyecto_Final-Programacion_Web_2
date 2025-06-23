@@ -9,6 +9,7 @@ import { WhatsappButton } from './whatsapp-button/whatsapp-button';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [Navbar, Home, AboutUs, Appointment, Footer, Services, WhatsappButton],
   templateUrl: './app.html',
   styleUrl: './app.css'
