@@ -9,13 +9,10 @@
 
 .navbar-nav .nav-link {
   font-size: 21px;
-  background-color: #f3f2ed;
   color: black !important;
   padding: 8px 8px;
   border-radius: 10px;
   transition: background-color 0.2s;
-
-  /* AÑADE ESTO para espacio a la derecha de cada botón */
   margin-right: 15px; /* Prueba con un valor como 10px, 15px, 20px */
   display: inline-block; /* Crucial para que min-width y text-align funcionen en un nav-link */
 
