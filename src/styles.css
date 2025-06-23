@@ -1,204 +1,151 @@
-/* Estilos globales responsivos */
-html, body {
-  margin: 0;
-  padding: 0;
-  /* Padding-top para navbar fija - responsivo */
-  padding-top: 60px; /* Ajusta según la altura real de tu navbar */
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
+
+/* src/styles.css */
+
+/* --- RESET BÁSICO Y ESTILOS GLOBALES --- */
 
 body, * {
   cursor: url('assets/imagenes/cursor2.png'), auto !important;
 }
 
-/* Contenedor principal */
-app-root {
-  display: block;
+html, body {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; /* Asegura que html y body ocupen la altura completa */
+  overflow-x: hidden; /* Evita scroll horizontal */
 }
 
-/* Eliminar completamente espacios entre secciones */
-#home, #about-us, #appointment, #services, #footer {
-  margin: 0 !important;
-  padding: 0 !important;
+
+/* --- ÁREA DE CONTENIDO FIJO (si aplica, como un área interna con max-width) --- */
+.home-content-area {
+  max-width: 1920px;
+  height: 900px; /* Ojo si este height fijo causa problemas de overflow */
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
 }
 
-/* About-us sin ningún padding */
-.about-us-container {
-  padding: 0 !important;
-  margin: 0 !important;
+/* --- ESTILOS DE COLORES PERSONALIZADOS --- */
+.text-custom-clinic {
+  color: #4aa49c; /* Verde del título "CLÍNICA" */
+  -webkit-text-stroke: 1px rgba(229, 255, 252, 0.07);
+  text-shadow: 0 0 1px rgba(229, 255, 252, 0.07);
+  font-family: 'Kanit Regular', Helvetica, sans-serif;
+  font-size: 4.5rem;
+  line-height: 1;
 }
 
-/* Home container sin espacios */
-.home-container-wrapper {
-  margin: 0 !important;
-  padding: 0 !important;
+.text-custom-veterinary {
+  color: #f0bf45; /* Amarillo del título "VETERINARIA" */
+  font-family: 'Kanit Regular', Helvetica, sans-serif;
+  font-size: 4.5rem;
+  line-height: 1;
 }
 
-/* Asegurar que no hay espacios en Bootstrap */
-.container-fluid {
-  padding-left: 15px !important;
-  padding-right: 15px !important;
+.bg-custom-green {
+  background-color: #4aa49c !important;
 }
 
-.row {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+.text-custom-yellow {
+  color: #f0bf45 !important;
 }
 
-#appointment {
-  padding-top: 0;
-  padding-bottom: 1rem;
+/* --- SECCIÓN TÍTULOS Y LOGO SUPERIOR --- */
+.title-logo-section {
+  position: absolute; /* Si este título está superpuesto y posicionado */
+  top: 10px;
+  left: 60%;
+  transform: translateX(-50%);
+  z-index: 20;
+  width: 900px;
+  text-align: center;
 }
 
-#services {
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-}
-
-/* Utilidades responsivas personalizadas */
-@media (max-width: 575.98px) {
-  .display-xs-6 { font-size: 2.5rem; }
-  
-  /* Reducir espacios en móviles */
-  #home, #about-us, #appointment, #services {
-    padding-bottom: 1rem;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .display-sm-5 { font-size: 3rem; }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .display-md-5 { font-size: 3rem; }
-}
-
-@media (min-width: 992px) {
-  .display-lg-4 { font-size: 3.5rem; }
-}
-
-/* Ajustes para WhatsApp flotante */
-.whatsapp-float-icon {
-  z-index: 1000;
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-float-icon:hover {
-  transform: scale(1.1);
-}
-
-/* Ajustes de altura mínima para secciones */
-section, div[id] {
-  min-height: fit-content;
-}
-
-/* Media queries para mejorar spacing en diferentes dispositivos */
-@media (max-width: 768px) {
-  .py-4 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
-  .py-5 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
-  
-  /* Reducir padding de navbar en móviles */
-  html, body {
-    padding-top: 70px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 992px) {
-  .py-md-5 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
-}
-
-/* Asegurar que las imágenes sean responsivas por defecto */
-img {
-  max-width: 100%;
+.logo-top-main {
+  width: 1200px; /* Ancho del logo "Moon Pet City" superior */
   height: auto;
+  margin-top: -1rem;
 }
 
-/* Mejorar legibilidad en dispositivos pequeños */
-@media (max-width: 576px) {
-  .fs-6 { font-size: 0.9rem !important; }
-  .fs-5 { font-size: 1rem !important; }
-  .fs-4 { font-size: 1.1rem !important; }
-  .fs-3 { font-size: 1.25rem !important; }
+/* --- SECCIÓN IMAGEN DE PERRO Y GATO (EN GRANDES PANTALLAS) --- */
+.dog-cat-combined-img {
+  position: absolute; /* Permite posicionar con bottom/left/etc. */
+  
+  /* --- PARA QUE SIEMPRE ESTÉ AL FINAL DE LA PRIMERA PANTALLA --- */
+  bottom: 0;   /* ¡CLAVE! Pega la imagen al fondo del .home-container-wrapper */
+               /* Si quieres un pequeño espacio desde abajo, usa bottom: 20px; */
+  left: 0;     /* Pega la imagen al borde izquierdo */
+               /* Si quieres moverla más a la derecha, usa 'left: 50px;' o un porcentaje como 'left: 5%;' */
+  
+  /* --- PARA CONTROLAR EL TAMAÑO DE LA IMAGEN --- */
+  width: 50%;  /* Ancho responsivo (50% del contenedor padre) */
+  max-width: 900px; /* Tamaño máximo para evitar que sea demasiado grande */
+  height: auto; /* ¡CRUCIAL! Mantiene la proporción de la imagen */
+  
+  z-index: 1; /* Orden de las capas, por encima del fondo */
+  /* Puedes añadir un borde temporal para depurar el tamaño y posición de este div */
+  /* border: 2px solid blue; */
 }
 
-/* Ajustes para cards en móviles */
-@media (max-width: 768px) {
-  .card-body {
-    padding: 1.5rem !important;
+/* Para asegurar que la imagen interna se ajuste a su div padre */
+.dog-cat-combined-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* --- SECCIÓN TARJETA DE HORARIO --- */
+.hours-card-container {
+  width: 450px;
+  top: 500px; /* Ajusta este valor si esta clase se usa en un elemento con 'position: absolute;' */
+  right: 150px;
+  z-index: 25;
+  box-shadow: 0 0.75rem 1.rem rgba(253, 255, 153, 0.514);
+  position: relative; /* Si contiene elementos decorativos internos con 'absolute' */
+}
+
+/* --- ICONO FLOTANTE DE WHATSAPP --- */
+.whatsapp-float-icon {
+  position: fixed; /* 'fixed' para que se mantenga en la pantalla al hacer scroll */
+  bottom: 20px;
+  right: 20px;
+  z-index: 30;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  background-color: #f0bf45;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  animation: bounce-whatsapp 2s infinite ease-in-out;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-icon-color {
+  font-size: 30px;
+  color: #4aa49c;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes bounce-whatsapp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
   }
 }
 
-/* Remover espacios excesivos entre componentes */
-.container, .container-fluid {
-  margin-bottom: 0;
-}
+/* --- FUENTES --- */
+/* Asegúrate de importar tus fuentes Kanit e Inter aquí o en index.html */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Kanit:wght@300;400;600&display=swap'); */
 
-/* Espaciado compacto para el about-us */
-.about-us-container {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
 
-/* FUERZA LAS ANIMACIONES DE WHATSAPP - AGREGAR AL FINAL DEL ARCHIVO */
+/*   ESTE ES PRIMERA PARTE*/
 
-/* Animación de rebote - MUY específica */
-a.whatsapp-float {
-  animation: whatsappBounce 2s ease-in-out infinite !important;
-  position: fixed !important;
-}
 
-@keyframes whatsappBounce {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
-}
 
-/* Pulsos más visibles */
-.whatsapp-pulse {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  width: 60px !important;
-  height: 60px !important;
-  border: 4px solid #25D366 !important;
-  border-radius: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  animation: whatsappPulse 1.5s ease-out infinite !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  z-index: -1 !important;
-}
 
-@keyframes whatsappPulse {
-  0% {
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.8);
-    opacity: 0;
-  }
-}
-
-.whatsapp-pulse-delayed {
-  animation-delay: 0.7s !important;
-}
-
-/* Hover effect más obvio */
-a.whatsapp-float:hover {
-  transform: scale(1.2) !important;
-  background-color: #128C7E !important;
-  animation-play-state: paused !important;
-}
-
-/* Asegurar que se ve en móviles */
-@media (max-width: 768px) {
-  .whatsapp-pulse {
-    width: 55px !important;
-    height: 55px !important;
-  }
-}

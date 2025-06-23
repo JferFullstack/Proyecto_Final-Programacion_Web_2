@@ -5,6 +5,19 @@
   --text-dark: #333; /* Color de texto oscuro para legibilidad */
 }
 
+h2 {
+    color: #f0bf45; /* Color verde azulado para el título */
+    font-family: 'Kanit Regular', Helvetica, sans-serif; /* Ajusta a tu fuente real */
+    font-size: 3rem; /* Tamaño del título */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left; /* Título alineado a la izquierda */
+    border-bottom: 2px solid #ffffff; /* Línea decorativa debajo del título */
+    padding-bottom: 10px;
+    display: inline-block; 
+  }
+
+
 /* Contenedor principal de la página "Acerca de Nosotros" */
 .about-us-container {
   position: relative; /* Para posicionar las formas decorativas dentro de este contenedor */
@@ -16,7 +29,7 @@
   display: flex;
   justify-content: center; /* Centra el contenido principal horizontalmente */
   align-items: center; /* Centra el contenido principal verticalmente */
-  background-color: #F0BF45; /
+  background-color: #F0BF45; 
 }
 
 /* El "rectángulo" blanco que contiene la imagen y el texto */
@@ -33,7 +46,21 @@
   gap: 40px; /* Espacio entre la imagen y el texto */
   position: relative; /* Necesario para que su z-index funcione */
   z-index: 10; /* Asegura que el contenido esté sobre las formas de fondo */
-  background-color: #F0BF45
+  background-color: #F0BF45; 
+
+  /* --- MODIFICACIONES PARA CENTRADO/DESPLAZAMIENTO --- */
+  /* Por defecto (desktop first), lo centramos con auto y luego ajustamos el margen derecho para moverlo a la izquierda */
+  margin-left: auto; 
+  /* Ajusta este valor para mover el contenedor "Acerca de Nosotros" más o menos a la izquierda en desktop. */
+  /* Un valor positivo lo moverá desde el centro hacia la izquierda */
+  margin-right: 5%; /* Ejemplo: Mueve el 5% del ancho del padre hacia la izquierda desde el centro */
+                      /* Si quieres un desplazamiento fijo en pixeles, usa px, ej: margin-right: 50px; */
+  /* Ojo: Esto hará que el lado derecho del content tenga un margen de 5%, y el lado izquierdo tenga lo que quede */
+  /* Si quieres moverlo un valor fijo en px, entonces:
+  margin-left: auto;
+  margin-right: calc(50% - 600px - 50px); // 50% de la pantalla - mitad del max-width - tu offset izquierdo
+                                        // Esto es si quieres un centrado pero con un offset hacia la izquierda
+  */
 }
 
 /* Contenedor para la imagen y el texto */
@@ -113,7 +140,9 @@
   .about-us-content {
     flex-direction: column; /* Apila la imagen y el texto en pantallas más pequeñas */
     padding: 30px;
-    width: 95%;
+    width: 95%; /* Se hace más ancho en móvil */
+    /* Para centrarlo en móvil, reiniciamos los márgenes de auto/desplazamiento */
+    margin: 0 auto; /* ¡Esto lo centra horizontalmente en móvil! */
   }
 
   .image-column,
@@ -135,30 +164,8 @@
   .section-quote {
     text-align: center; /* Centra la frase en pantallas pequeñas */
   }
-
 }
 
-@media (max-width: 768px) {
-  .about-us-container {
-    padding: 30px 0;
-  }
-
-  .about-us-content {
-    padding: 20px;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .section-text {
-    font-size: 1rem;
-  }
-
-  .section-quote {
-    font-size: 1.1rem;
-  }
-}
 
 @media (max-width: 576px) {
   .about-us-content {
@@ -175,4 +182,64 @@
 }
 .titulo-vision {
   color: #f0bf45; 
+}
+
+
+
+.about-us-background {
+  background-color: #D4A017; /* Amarillo más oscuro/dorado */
+  /* Alternativas más oscuras: */
+  /* background-color: #B8860B; - Dorado más oscuro */
+  /* background-color: #CD853F; - Bronce */
+  /* background-color: #DAA520; - Oro oscuro */
+  
+  padding: 3rem 0;
+}
+
+/* Asegurar que el texto sea legible sobre fondo oscuro */
+.about-us-background .section-title {
+  color: #26958C; /* Verde de tu marca */
+}
+
+.about-us-background .section-text {
+  color: #333; /* Texto oscuro para buena legibilidad */
+}
+
+.about-us-background .section-quote {
+  color: #26958C; /* Verde para destacar la frase */
+}
+
+
+/* Texto destacado en about-us */
+.highlighted-text {
+  color: #26958C !important; /* Verde de tu marca */
+  font-weight: 700 !important; /* Más negrita */
+  text-transform: uppercase !important; /* Mayúsculas */
+  font-size: 1.1em !important; /* Ligeramente más grande */
+  letter-spacing: 0.5px !important; /* Espaciado entre letras */
+}
+
+/* Justificación de texto */
+.text-justify {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
+/* Espaciado adicional para Misión y Visión */
+.py-md-6 {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+@media (max-width: 768px) {
+  .py-md-6 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  
+  /* En móviles, texto destacado un poco más pequeño */
+  .highlighted-text {
+    font-size: 1.05em !important;
+  }
 }

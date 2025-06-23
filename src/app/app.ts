@@ -5,10 +5,11 @@ import { AboutUs } from './about-us/about-us';
 import { Appointment } from './appointment/appointment';
 import { Footer } from './footer/footer';
 import { Services } from './services/services';
+import { WhatsappButton } from './whatsapp-button/whatsapp-button';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, Home, AboutUs, Appointment, Footer, Services,],
+  imports: [Navbar, Home, AboutUs, Appointment, Footer, Services, WhatsappButton],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

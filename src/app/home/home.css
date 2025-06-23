@@ -1,15 +1,23 @@
 /* Contenedor principal que envuelve todo el área de contenido de la página */
 .home-container-wrapper {
-  min-height: calc(100vh - 82px); /* Altura de la ventana menos el navbar */
-  background-color: white; /* Asegura el fondo blanco general */
-  display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: flex-start; /* Alinea el contenido al inicio verticalmente */
-  position: relative; /* Necesario para que los elementos absolutos internos se posicionen correctamente */
-  overflow: hidden; /* Oculta cualquier cosa que se salga */
-  width: 100%;
-}
+  /* Elimina el padding-top si lo habías añadido. No es necesario aquí para este problema específico. */
+  /* padding-top: 82px;  <--- ¡ELIMINA O COMENTA ESTA LÍNEA! */
 
+  min-height: calc(100vh - 82px); /* Esto es la altura *disponible* para el contenido debajo del navbar */
+  position: relative; /* ¡Esencial! Los elementos con position:absolute se posicionan respecto a este. */
+  
+  margin-top: 100px; /* <<< ¡AÑADE ESTA LÍNEA! >>> */
+                     /* Esto empuja todo el *contenedor* .home-container-wrapper hacia abajo,
+                        dejando espacio libre para el navbar fijo en la parte superior. */
+
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 100%;
+  /* border: 2px solid red; */ /* Mantenlo si sigues depurando */
+}
 /* Área de contenido que tendrá el tamaño fijo de tu diseño */
 .home-content-area {
   max-width: 1920px; 
@@ -44,7 +52,6 @@
 }
 
 /* ------------------- SECCIÓN TÍTULOS Y LOGO SUPERIOR ------------------- */
-/* ------------------- SECCIÓN TÍTULOS Y LOGO SUPERIOR ------------------- */
 .title-logo-section {
   position: absolute;
   top: 10px; /* Mantén o ajusta la posición vertical */
@@ -67,14 +74,29 @@
   /* Si ya está `w-100` y `h-100` en el HTML, no necesitas más aquí para el contenedor */
 }
 
+/* Ahora, el bloque para tu imagen dog-cat-combined-img */
 .dog-cat-combined-img {
-  width: 850px; /* Ajusta este ancho al tamaño deseado de tu imagen combinada */
-  height: 550px; /* Ajusta esta altura al tamaño deseado de tu imagen combinada */
-  object-fit: contain; /* Asegura que la imagen se vea completa */
-  bottom: 0; /* Anclado a la parte inferior del .pet-background-section */
-  left: 0; /* <--- CAMBIA ESTE VALOR A 0 PARA ALINEAR A LA IZQUIERDA */
-  transform: none; /* <--- QUITA CUALQUIER TRANSFORMACIÓN DE CENTRADO */
-  z-index: 1;
+  position: absolute;
+  
+  /* >>> ESTE ES EL CAMBIO CLAVE: Usa 'bottom' en lugar de 'top' <<< */
+  bottom: 0;   /* Esto pegará el borde inferior de la imagen al borde inferior de .home-container-wrapper. */
+               /* Si quieres un pequeño espacio debajo, puedes usar 'bottom: 20px;' o el valor que desees. */
+  
+  left: 0;     /* Esto lo pega a la izquierda (ajusta si quieres moverlo horizontalmente) */
+  
+  width: 50%;  /* Haz el ancho responsivo al 50% de su contenedor */
+  max-width: 900px; /* Limita el tamaño máximo en pantallas muy grandes */
+  height: auto; /* Mantiene la proporción de la imagen automáticamente */
+  
+  z-index: 1; /* Asegura el orden de las capas */
+}
+
+/* Y si tienes la imagen interna, asegúrate de que también se adapte a su contenedor: */
+.dog-cat-combined-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 200px;
 }
 
 /* ------------------- SECCIÓN TARJETA DE HORARIO ------------------- */
@@ -101,44 +123,50 @@
 }
 
 
-/* ------------------- ICONO FLOTANTE DE WHATSAPP (Ajustado para ser pequeño, circular y con icono Bootstrap) ------------------- */
-.whatsapp-float-icon {
-  position: fixed;
-  bottom: 20px; /* Distancia desde abajo */
-  right: 20px;  /* Distancia desde la derecha */
-  z-index: 30;
 
-  width: 60px;  /* Tamaño del círculo */
-  height: 60px; /* Tamaño del círculo */
-  border-radius: 50%; /* Hace que el contenedor sea circular */
-
-  background-color: #f0bf45; /* <--- Fondo amarillo mostaza para el círculo */
-
-  display: flex;
-  justify-content: center; /* Centra el icono horizontalmente */
-  align-items: center;   /* Centra el icono verticalmente */
-  text-decoration: none;
-  animation: bounce-whatsapp 2s infinite ease-in-out;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  /* Eliminamos overflow: hidden; aquí ya que no hay imagen para recortar, el icono se ajusta con font-size */
+.text-custom-clinic {
+  font-size: 2.5rem; /* El tamaño base para desktop */
+  /* ... otros estilos ... */
 }
 
-.whatsapp-icon-color {
-  font-size: 30px; /* <--- Tamaño del icono de WhatsApp dentro del círculo. Ajusta si es necesario. */
-  color: #4aa49c; /* <--- Color verde azulado para el icono de WhatsApp */
+.text-custom-veterinary {
+  font-size: 2.5rem; /* El tamaño base para desktop */
+  /* ... otros estilos ... */
 }
-/* ------------------- ANIMACIONES ------------------- */
-@keyframes bounce-whatsapp {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px); /* Altura del rebote */
+
+/* --- Media Queries para Teléfonos y Tablets --- */
+
+/* Para pantallas medianas (tablets en modo retrato, móviles grandes) */
+@media (max-width: 991.98px) { /* Bootstrap 'md' breakpoint */
+  .text-custom-clinic,
+  .text-custom-veterinary {
+    font-size: 2.2rem; /* Reduce un poco el tamaño */
   }
 }
 
-/* --- Asegúrate de que las fuentes estén cargadas correctamente --- */
-/* Si no has cargado las fuentes 'Kanit' e 'Inter' globalmente (ej. en index.html o styles.css),
-   puedes hacerlo aquí o en styles.css. Ejemplo:
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Kanit:wght@300;400;600&display=swap');
+/* Para pantallas pequeñas (móviles en general) */
+@media (max-width: 767.98px) { /* Bootstrap 'sm' breakpoint */
+  .text-custom-clinic,
+  .text-custom-veterinary {
+    font-size: 0.8rem; /* Reduce más el tamaño */
+    /* Si aún se corta, puedes probar con 1.6rem o 1.5rem */
+  }
+}
+
+/* Para pantallas muy pequeñas (móviles antiguos o muy estrechos) */
+@media (max-width: 575.98px) { /* Bootstrap 'xs' breakpoint */
+  .text-custom-clinic,
+  .text-custom-veterinary {
+    font-size: 0.8rem; /* Un tamaño aún más pequeño */
+  }
+}
+
+/* Si quieres que el texto "VETERINARIA" se vaya a una nueva línea si el ancho es muy reducido: */
+/*
+@media (max-width: 400px) { // Un breakpoint arbitrario, ajusta según necesidad
+  .text-custom-veterinary {
+    margin-left: 0 !important; // Quita el espacio a la izquierda para que se vea abajo
+    display: block; // Asegura que ocupe toda la línea disponible
+  }
+}
 */
