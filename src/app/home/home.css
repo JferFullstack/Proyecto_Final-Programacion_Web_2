@@ -1,3 +1,5 @@
+
+
 /*
  *******************************************************************************
  * ARCHIVO: src/styles.css (o src/app/home/home.component.css)               *
@@ -78,7 +80,7 @@
   max-width: 450px;
   margin: 20px auto; /* Centrado y con margen superior/inferior en móvil */
   z-index: 10;
-  box-shadow: 0 0.75rem 1rem rgba(142, 143, 113, 0.514);
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.514);
 }
 
 .horarios-card-unified .card {
@@ -123,7 +125,7 @@
   .unified-dog-cat-img {
     position: static;
     margin: 0;
-    width: clamp(600px, 50vw, 650px);
+    width: clamp(400px, 50vw, 450px);
     height: auto;
     max-width: none;
     max-height: none;
@@ -140,7 +142,7 @@
   .horarios-card-unified {
     position: static;
     margin: 0 0 110px 0; /* Margen inferior para elevarla si es necesario */
-    width: 450px;
+    width: 400px;
   }
 }
 
