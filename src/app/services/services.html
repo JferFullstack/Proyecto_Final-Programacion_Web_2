@@ -8,17 +8,73 @@
         </div>
       </div>
 
-      <div class="row g-3">
-        <div *ngFor="let servicio of servicios"
-             class="col-12 col-sm-6 col-lg-4"> <div class="servicio card h-100 border-0 shadow-sm">
-            <div class="card-body text-center p-3 p-md-4">
-              <div class="icono mb-3"
-                   [ngClass]="{'fila-1': servicio.fila === 1, 'fila-2': servicio.fila === 2, 'fila-3': servicio.fila === 3}">
-                <i class="fa-solid fs-1 d-block mb-3" [ngClass]="servicio.icono"></i>
-              </div>
-              <h3 class="fs-5 fw-bold mb-3">{{ servicio.titulo }}</h3>
-              <p class="fs-6 lh-base text-muted">{{ servicio.descripcion }}</p>
+<!-- Primera fila - 3 servicios -->
+    <div class="row g-3 mb-3">
+      <div *ngFor="let servicio of servicios.slice(0, 3)" 
+           class="col-12 col-sm-6 col-lg-4">
+        <div class="servicio card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-3 p-md-4">
+            
+            <!-- Icono -->
+            <div class="icono mb-3"
+                 [ngClass]="{'fila-1': servicio.fila === 1, 'fila-2': servicio.fila === 2, 'fila-3': servicio.fila === 3}">
+              <i class="fa-solid fs-1 d-block mb-3" [ngClass]="servicio.icono"></i>
             </div>
+            
+            <!-- Título -->
+            <h3 class="fs-5 fw-bold mb-3">{{ servicio.titulo }}</h3>
+            
+            <!-- Descripción -->
+            <p class="fs-6 lh-base text-muted">{{ servicio.descripcion }}</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Segunda fila - 3 servicios -->
+    <div class="row g-3 mb-3">
+      <div *ngFor="let servicio of servicios.slice(3, 6)" 
+           class="col-12 col-sm-6 col-lg-4">
+        <div class="servicio card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-3 p-md-4">
+            
+            <!-- Icono -->
+            <div class="icono mb-3"
+                 [ngClass]="{'fila-1': servicio.fila === 1, 'fila-2': servicio.fila === 2, 'fila-3': servicio.fila === 3}">
+              <i class="fa-solid fs-1 d-block mb-3" [ngClass]="servicio.icono"></i>
+            </div>
+            
+            <!-- Título -->
+            <h3 class="fs-5 fw-bold mb-3">{{ servicio.titulo }}</h3>
+            
+            <!-- Descripción -->
+            <p class="fs-6 lh-base text-muted">{{ servicio.descripcion }}</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tercera fila - 1 servicio centrado (Trámite de exportación) -->
+    <div class="row g-3 justify-content-center">
+      <div *ngFor="let servicio of servicios.slice(6, 7)" 
+           class="col-12 col-sm-8 col-md-6 col-lg-4">
+        <div class="servicio card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-3 p-md-4">
+            
+            <!-- Icono -->
+            <div class="icono mb-3"
+                 [ngClass]="{'fila-1': servicio.fila === 1, 'fila-2': servicio.fila === 2, 'fila-3': servicio.fila === 3}">
+              <i class="fa-solid fs-1 d-block mb-3" [ngClass]="servicio.icono"></i>
+            </div>
+            
+            <!-- Título -->
+            <h3 class="fs-5 fw-bold mb-3">{{ servicio.titulo }}</h3>
+            
+            <!-- Descripción -->
+            <p class="fs-6 lh-base text-muted">{{ servicio.descripcion }}</p>
+            
           </div>
         </div>
       </div>
