@@ -1,292 +1,125 @@
-/* src/app/appointment/appointment.css */
-
-/* Contenedor principal que ocupa toda la altura de la ventana */
-/* Eliminamos .section-uniform si solo se usa para esto y ajustamos el hero-section */
-.appointment-hero-section {
-  position: relative;
-  width: 100vw; /* Ocupa el 100% del ancho de la ventana */
-  height: 100vh; /* Ocupa el 100% de la altura de la ventana */
-  display: flex;
-  align-items: center; /* Centra verticalmente el contenido dentro de hero-section */
-  overflow: hidden; /* Asegura que la imagen de fondo no se desborde */
-  /* background-color: #F8D568; /* Puedes quitar esto si la imagen de fondo cubre */
-  /* box-shadow: 0 10px 20px rgba(0,0,0,0.15); */ /* Opcional: Sombra sutil */
+.cita-container {
+    position: relative;
+    width: 1920px; /* Ancho ajustable */
+    height: 700px; /* Alto ajustable */
+    background-color: #F8D568; /* Color de fondo similar al de la imagen */
+    overflow: hidden; /* Asegura que la imagen de fondo no se desborde */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Sombra sutil */
 }
 
-/* Imagen de fondo */
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Detrás del contenido */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    /* filter: brightness(0.8); */ /* Opcional: Oscurece un poco la imagen para que el texto resalte */
 }
 
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
-  object-position: center;
-  filter: brightness(0.7); /* Oscurece un poco la imagen para que el texto resalte */
+/* Si usas una imagen PNG para el efecto de rasgado y el gatito, añádele estos estilos */
+/* .torn-paper-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    height: auto;
+    z-index: 3;
+} */
+
+.content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px; /* Espaciado interno */
+    z-index: 2; /* Asegura que el contenido esté por encima de la imagen */
 }
 
-/* Overlay para mejorar legibilidad */
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(38, 149, 140, 0.3) 0%,
-    rgba(240, 191, 69, 0.2) 100%
-  );
-  z-index: 2; /* Asegura que el overlay esté entre la imagen y el contenido */
+.top-left-section {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre el icono de WhatsApp y el botón */
+    
+    /* ***** CAMBIOS AQUÍ ***** */
+    margin-top: 30px;  /* Empuja la sección 30px hacia abajo */
+    margin-left: 30px; /* Empuja la sección 30px hacia la derecha */
+    /* Puedes ajustar estos valores según cuánto quieras moverlo */
 }
 
-/* Contenido principal que posicionará las secciones */
-.hero-content {
-  position: relative;
-  z-index: 10; /* Asegura que el contenido esté por encima del overlay */
-  width: 100%;
-  height: 100%; /* Ocupa toda la altura del hero-section */
-  display: flex;
-  flex-direction: column; /* Apila cta-section y location-section verticalmente */
-  justify-content: space-between; /* Empuja cta-section arriba y location-section abajo */
-  padding: 40px; /* Espaciado interno general */
-  box-sizing: border-box; /* Incluye padding en el tamaño total */
+.whatsapp-icon-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #4AB2B2; /* Color turquesa similar al de la imagen */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-
-.cta-content {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-width: 400px; /* Limita el ancho para que no ocupe toda la fila */
-  text-align: center;
-  /* Eliminamos margins manuales como margin-top/left si ya usamos padding y flexbox para posicionar */
+.btn-agenda {
+    background-color: #4AB2B2; /* Color turquesa similar al de la imagen */
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px; /* Botón redondeado */
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
 }
 
-.cta-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #26958C;
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
+.btn-agenda:hover {
+    background-color: #3a9797; /* Un tono más oscuro al pasar el ratón */
+    color: white;
 }
 
-.cta-subtitle {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 1.5rem;
+.bottom-right-section {
+    align-self: flex-end; /* Alinea a la derecha en el contenedor flex-column */
+    text-align: right;
+    color: #333; /* Color de texto */
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(45deg, #25D366, #128C7E);
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: none;
-  cursor: pointer;
-}
-
-.cta-button:hover {
-  background: linear-gradient(45deg, #128C7E, #25D366);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(179, 211, 37, 0.4);
-  color: white;
-}
-
-/* Sección de ubicación (abajo a la derecha) */
-.location-section {
-  display: flex;
-  justify-content: flex-end; /* Empuja el location-card a la derecha */
-  align-items: flex-end;   /* Asegura que si hay espacio extra, se alinee abajo */
-}
-
-.location-card {
-  background: rgba(38, 149, 140, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-width: 350px; /* Limita el ancho */
-}
-
-.location-icon-wrapper {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 1rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.location-text {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el icono de ubicación y el texto */
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    color: #ffffff;
 }
 
 .location-icon {
-  font-size: 1.5rem;
-  color: #F0BF45;
+    color: #ffffff; /* Color del icono de ubicación */
+    font-size: 2rem;
 }
 
-.location-info {
-  color: white;
+.location-details {
+    display: flex;       /* Mantén esto para la columna */
+    flex-direction: column; /* Esto apila los spans uno debajo del otro */
+    align-items: flex-end; /* Alinea el texto a la derecha */
 }
 
-.location-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-  opacity: 0.9;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.location-primary {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 0.2rem;
-  color: #F0BF45;
-}
-
-.location-secondary {
-  font-size: 1rem;
-  opacity: 0.8;
-  margin-bottom: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .appointment-hero-section {
-    height: auto; /* Permite que la altura se ajuste al contenido en móviles */
-    min-height: 80vh; /* Asegura un mínimo de altura */
-  }
-
-  .hero-content {
-    flex-direction: column; /* Apila las secciones una encima de la otra */
-    padding: 1rem;
-    gap: 2rem; /* Espacio entre la sección CTA y la de ubicación */
-    min-height: 80vh; /* Mantiene el contenido ocupando la mayoría de la pantalla */
-  }
-
-  .cta-section {
-    justify-content: center; /* Centra el cta-content horizontalmente en pantallas pequeñas */
-    align-items: center;
-  }
-
-  .cta-content {
-    padding: 1.5rem;
-    max-width: 100%; /* Permite que ocupe todo el ancho disponible */
-  }
-
-  .cta-title {
-    font-size: 1.5rem;
-  }
-
-  .cta-subtitle {
-    font-size: 1rem;
-  }
-
-  .cta-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-  }
-
-  .location-section {
-    justify-content: center; /* Centra el location-card horizontalmente */
-    align-items: center;
-  }
-
-  .location-card {
-    padding: 1rem;
-    max-width: 100%;
-    flex-direction: column; /* Apila el icono y la info verticalmente */
-    text-align: center;
-    gap: 0.8rem;
-  }
-
-  .location-icon-wrapper {
-    padding: 0.8rem;
-  }
-
-  .location-icon {
-    font-size: 1.2rem;
-  }
-
-  .location-primary {
-    font-size: 1.1rem;
-  }
-
-  .location-secondary {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .appointment-hero-section {
-    min-height: 70vh; /* Ajuste para pantallas muy pequeñas */
-  }
-
-  .hero-content {
-    min-height: 70vh;
-    padding: 0.8rem;
-  }
-
-  .cta-content {
-    padding: 1rem;
-  }
-
-  .cta-title {
+.main-location {
+    display: block; /* Asegura que tome toda la línea disponible */
     font-size: 1.3rem;
-  }
-
-  .location-card {
-    padding: 0.8rem;
-  }
+    font-weight: bold;
+    line-height: 1.2;
+    color: #ffffff;
 }
 
-/* Animaciones */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.cta-content, .location-card {
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.location-card {
-  animation-delay: 0.2s;
-}
-
-/* Accesibilidad */
-@media (prefers-reduced-motion: reduce) {
-  .cta-content, .location-card {
-    animation: none;
-  }
-
-  .cta-button {
-    transition: none;
-  }
+.sub-location {
+    display: block; /* Asegura que tome toda la línea disponible */
+    font-size: 0.95rem;
+    line-height: 1.2;
+    color: #fffefe;
+    margin-top: 2px; /* Pequeño margen superior para separar si lo deseas */
 }
