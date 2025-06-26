@@ -1,0 +1,49 @@
+<div class="home-container-wrapper" style="margin: 1; padding: 0; height: auto;">
+  <div class="container-fluid p-0 position-relative" style="margin: 0; height: auto;">
+    <div class="container-fluid" style="margin: 0; padding: 5px 0;">
+      <div class="row justify-content-center" style="margin: 0;">
+        <div class="col-12 text-center">
+          <h5 class="fw-normal mb-4">
+            <span class="text-custom-clinic" style="font-size: 3rem;">CLÍNICA</span>
+            <span class="text-custom-veterinary ms-2" style="font-size: 3rem;">VETERINARIA</span>
+          </h5>
+          <img
+            src="assets/imagenes/Logo_Moon_Pet_City-sin_fondo.png"
+            alt="Moon Pet City"
+            class="img-fluid logo-top-main"
+            style="max-width: 550px; width: 90%; margin-bottom: 0;"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-content-wrapper">
+        <div class="unified-dog-cat-img" style="pointer-events: none;">
+          <img
+            src="assets/imagenes/Perro_gato.png"
+            alt="Perro y Gato"
+            class="img-fluid"
+            style="object-fit: contain;"
+          />
+        </div>
+
+        
+        <div class="horarios-card-unified my-4" style="z-index: 10">
+          <div class="card border-0" style="width: 100%;">
+            <div class="card-header text-white text-center py-20 border-0" style="background-color: #26958C;">
+              <i class="bi bi-clock fs-1 d-block mb-12"></i>
+              <h5 class="card-title fw-bold mb-0">Horario de atención a domicilio</h5>
+            </div>
+            <div class="card-body bg-white text-center py-4">
+              <div *ngFor="let schedule of businessHours" class="mb-3">
+                <p class="mb-0 fw-bold text-dark fs-5">{{ schedule.days }}</p>
+                <p class="mb-0 text-muted fs-6">{{ schedule.hours }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+</div>

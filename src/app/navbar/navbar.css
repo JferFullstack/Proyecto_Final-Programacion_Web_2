@@ -1,0 +1,30 @@
+
+.navbar {
+  position: fixed; /* Hace que la barra de navegación sea flotante */
+  top: 0;          /* La fija en la parte superior de la ventana */
+  width: 100%;     /* Asegura que abarque todo el ancho de la ventana */
+  z-index: 1030;   /* Un z-index alto para que esté por encima de otros elementos */
+  
+}
+
+.navbar-nav .nav-link {
+  font-size: 21px;
+  color: black !important;
+  padding: 8px 8px;
+  border-radius: 10px;
+  transition: background-color 0.2s;
+  margin-right: 15px; /* Prueba con un valor como 10px, 15px, 20px */
+  display: inline-block; /* Crucial para que min-width y text-align funcionen en un nav-link */
+
+}
+
+/* Opcional: Elimina el margen del último elemento para que no haya un espacio extra innecesario */
+.navbar-nav .nav-item:last-child .nav-link {
+  margin-right: 0;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #f0bf45;      
+  color: #4aa49c !important;      
+  font-weight: bold;
+}

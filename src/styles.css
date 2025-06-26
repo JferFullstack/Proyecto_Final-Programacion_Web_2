@@ -1,0 +1,225 @@
+/* Círculos de fondo suaves para toda la página */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+body::after {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(240, 191, 69, 0.15);
+  bottom: 20%;
+  left: 10%;
+  
+}
+
+
+body {
+  background-image: 
+    
+    radial-gradient(circle 50px at 80% 30%, rgba(74, 164, 156, 0.12) 70%, transparent 70%),
+    radial-gradient(circle 50px at 20% 70%, rgba(74, 164, 156, 0.10) 70%, transparent 70%),
+    radial-gradient(circle 50px at 70% 85%, rgba(74, 164, 156, 0.08) 70%, transparent 70%),
+    
+   
+    radial-gradient(circle 50px at 25% 40%, rgba(240, 191, 69, 0.12) 70%, transparent 70%),
+    radial-gradient(circle 50px at 85% 60%, rgba(240, 191, 69, 0.10) 70%, transparent 70%),
+    radial-gradient(circle 50px at 45% 15%, rgba(240, 191, 69, 0.08) 70%, transparent 70%),
+    
+    
+    radial-gradient(circle 25px at 60% 50%, rgba(74, 164, 156, 0.10) 70%, transparent 70%),
+    radial-gradient(circle 25px at 15% 25%, rgba(74, 164, 156, 0.08) 70%, transparent 70%),
+    radial-gradient(circle 25px at 90% 20%, rgba(74, 164, 156, 0.12) 70%, transparent 70%),
+    
+    
+    radial-gradient(circle 25px at 35% 80%, rgba(240, 191, 69, 0.10) 70%, transparent 70%),
+    radial-gradient(circle 25px at 75% 75%, rgba(240, 191, 69, 0.08) 70%, transparent 70%),
+    radial-gradient(circle 25px at 10% 55%, rgba(240, 191, 69, 0.12) 70%, transparent 70%);
+}
+
+/* Animación suave de flotación */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-30px) translateX(15px);
+  }
+  50% {
+    transform: translateY(-15px) translateX(-20px);
+  }
+  75% {
+    transform: translateY(-35px) translateX(10px);
+  }
+}
+
+
+/* src/styles.css */
+
+/* Aplica esto a cada sección principal a la que tu navbar redirige */
+#home,
+#about-us,
+#appointment,
+#services,
+#footer { /* Añade todos los IDs de tus secciones principales aquí */
+  scroll-margin-top: 100px; /* <--- ¡USA LA ALTURA EXACTA DE TU NAVBAR AQUÍ! */
+                            /* Esto le dice al navegador que deje 140px de espacio arriba al hacer scroll */
+}
+
+/* --- RESET BÁSICO Y ESTILOS GLOBALES --- */
+
+html, body {
+  padding-top: 240px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; /* Asegura que html y body ocupen la altura completa */
+  overflow-x: hidden; /* Evita scroll horizontal */
+  cursor: url('assets/imagenes/cursor2.png'), auto !important;
+}
+
+
+/* --- ÁREA DE CONTENIDO FIJO (si aplica, como un área interna con max-width) --- */
+.home-content-area {
+  max-width: 1920px;
+  height: 900px; /* Ojo si este height fijo causa problemas de overflow */
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.navbar-top-spacer {
+  height: 140px; /* <--- ¡USA AQUÍ LA ALTURA EXACTA QUE MEDISTE PARA TU NAVBAR! */
+  width: 100%;
+  /* background-color: rgba(255, 0, 0, 0.2); */ /* Descomenta para depurar y ver el espaciador */
+}
+
+/* --- ESTILOS DE COLORES PERSONALIZADOS --- */
+.text-custom-clinic {
+  color: #4aa49c; /* Verde del título "CLÍNICA" */
+  -webkit-text-stroke: 1px rgba(229, 255, 252, 0.07);
+  text-shadow: 0 0 1px rgba(229, 255, 252, 0.07);
+  font-family: 'Kanit Regular', Helvetica, sans-serif;
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.text-custom-veterinary {
+  color: #f0bf45; /* Amarillo del título "VETERINARIA" */
+  font-family: 'Kanit Regular', Helvetica, sans-serif;
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.bg-custom-green {
+  background-color: #4aa49c !important;
+}
+
+.text-custom-yellow {
+  color: #f0bf45 !important;
+}
+
+/* --- SECCIÓN TÍTULOS Y LOGO SUPERIOR --- */
+.title-logo-section {
+  position: absolute; /* Si este título está superpuesto y posicionado */
+  top: 10px;
+  left: 60%;
+  transform: translateX(-50%);
+  z-index: 20;
+  width: 900px;
+  text-align: center;
+}
+
+.logo-top-main {
+  width: 1200px; /* Ancho del logo "Moon Pet City" superior */
+  height: auto;
+  margin-top: -1rem;
+}
+
+/* --- SECCIÓN IMAGEN DE PERRO Y GATO (EN GRANDES PANTALLAS) --- */
+.dog-cat-combined-img {
+  position: absolute; /* Permite posicionar con bottom/left/etc. */
+  
+  /* --- PARA QUE SIEMPRE ESTÉ AL FINAL DE LA PRIMERA PANTALLA --- */
+  bottom: 0;   /* ¡CLAVE! Pega la imagen al fondo del .home-container-wrapper */
+               /* Si quieres un pequeño espacio desde abajo, usa bottom: 20px; */
+  left: 0;     /* Pega la imagen al borde izquierdo */
+               /* Si quieres moverla más a la derecha, usa 'left: 50px;' o un porcentaje como 'left: 5%;' */
+  
+  /* --- PARA CONTROLAR EL TAMAÑO DE LA IMAGEN --- */
+  width: 50%;  /* Ancho responsivo (50% del contenedor padre) */
+  max-width: 900px; /* Tamaño máximo para evitar que sea demasiado grande */
+  height: auto; /* ¡CRUCIAL! Mantiene la proporción de la imagen */
+  
+  z-index: 1; /* Orden de las capas, por encima del fondo */
+  /* Puedes añadir un borde temporal para depurar el tamaño y posición de este div */
+  /* border: 2px solid blue; */
+}
+
+/* Para asegurar que la imagen interna se ajuste a su div padre */
+.dog-cat-combined-img img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* --- SECCIÓN TARJETA DE HORARIO --- */
+.hours-card-container {
+  width: 450px;
+  top: 500px; /* Ajusta este valor si esta clase se usa en un elemento con 'position: absolute;' */
+  right: 150px;
+  z-index: 25;
+  box-shadow: 0 0.75rem 1.rem rgba(253, 255, 153, 0.514);
+  position: relative; /* Si contiene elementos decorativos internos con 'absolute' */
+}
+
+/* --- ICONO FLOTANTE DE WHATSAPP --- */
+.whatsapp-float-icon {
+  position: fixed; /* 'fixed' para que se mantenga en la pantalla al hacer scroll */
+  bottom: 20px;
+  right: 20px;
+  z-index: 30;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  background-color: #f0bf45;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  animation: bounce-whatsapp 2s infinite ease-in-out;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-icon-color {
+  font-size: 30px;
+  color: #4aa49c;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes bounce-whatsapp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* --- FUENTES --- */
+/* Asegúrate de importar tus fuentes Kanit e Inter aquí o en index.html */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Kanit:wght@300;400;600&display=swap'); */
+
+
+/*   ESTE ES PRIMERA PARTE*/
+
+
+
+

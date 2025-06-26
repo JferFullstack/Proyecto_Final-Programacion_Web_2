@@ -1,0 +1,229 @@
+/* Colores de tu paleta (Asegúrate de que coincidan con tus estilos globales) */
+:root {
+  --color-primary-green: #4aa49c; /* Verde azulado */
+  --color-secondary-yellow: #f0bf45; /* Amarillo mostaza */
+  --text-dark: #333; /* Color de texto oscuro para legibilidad */
+}
+
+/* Ajuste para h2 global si lo tienes, sino ignora */
+h2 {
+  color: #f0bf45; /* Color verde azulado para el título */
+  font-family: 'Kanit Regular', Helvetica, sans-serif; /* Ajusta a tu fuente real */
+  font-size: 3rem; /* Tamaño del título */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left; /* Título alineado a la izquierda */
+  border-bottom: 2px solid #ffffff; /* Línea decorativa debajo del título */
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+/* Contenedor principal de la página "Acerca de Nosotros" */
+.about-us-container {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 82px);
+  background-color: var(--color-secondary-yellow); /* Fondo amarillo como en la imagen */
+  overflow: hidden;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0BF45;
+}
+
+/* El "rectángulo" blanco que contiene la imagen y el texto */
+.about-us-content {
+  background-color: white;
+  width: 90%; /* Ancho del contenido principal */
+  /* --- CAMBIOS CLAVE AQUÍ PARA HACER LA CARD MÁS GRANDE --- */
+  max-width: 1400px; /* Aumentado de 1200px a 1400px (o más si lo deseas) */
+  min-height: 700px; /* Aumentado de 600px a 700px (o más si lo deseas) */
+  /* --- FIN CAMBIOS CLAVE --- */
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 10;
+  background-color: #F0BF45;
+
+  /* Modificaciones para centrado/desplazamiento (si las tenías y quieres mantenerlas) */
+  margin-left: auto;
+  margin-right: 5%; /* Mantiene el desplazamiento a la izquierda en desktop */
+}
+
+/* Contenedor para la imagen y el texto */
+.about-us-main-section { /* NOTA: Este selector no parece estar en tu HTML, asegúrate de que se aplique */
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Columna de la Imagen */
+/* NOTA: En tu HTML estás usando col-12 col-lg-6 en lugar de .image-column.
+   Aplicaremos los estilos directamente a la img. */
+/* .image-column {
+  flex: 0 0 40%;
+  max-width: 40%;
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+} */
+
+.about-us-img {
+  /* width: 100%; /* Esto ya lo tienes en tu HTML con style="width: 100%;" */
+  /* --- CAMBIOS CLAVE AQUÍ PARA HACER LA IMAGEN MÁS GRANDE --- */
+  max-width: 650px !important; /* Aumentado de 350px a 450px (o más) */
+  height: auto;
+  object-fit: cover;
+  transform: translateY(40px); /* Mantiene el efecto de desplazamiento si lo deseas */
+}
+
+/* Columna del Texto */
+/* NOTA: En tu HTML estás usando col-12 col-lg-6 en lugar de .text-column. */
+/* .text-column {
+  flex: 0 0 55%;
+  max-width: 55%;
+  color: var(--text-dark);
+  line-height: 1.6;
+} */
+
+.section-title {
+  color: #4AA49C;
+  font-family: 'Kanit Regular', Helvetica, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.section-tittle2 { /* Parece un typo, debería ser section-title si es para el mismo propósito */
+  color: #F0BF45;
+  font-family: 'Kanit Regular', Helvetica, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.section-text {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.section-quote {
+  font-size: 1.9rem;
+  font-weight: bold;
+  color: #003496;
+  margin-top: 30px;
+  text-align: right;
+}
+
+/* ------------------- RESPONSIVIDAD BÁSICA ------------------- */
+@media (max-width: 992px) {
+  .about-us-content {
+    flex-direction: column;
+    padding: 30px;
+    width: 95%;
+    margin: 0 auto; /* ¡Esto lo centra horizontalmente en móvil! */
+    /* Resetea la altura mínima si no la necesitas tan grande en móvil */
+    min-height: auto; 
+  }
+
+  /* Las columnas de Bootstrap (col-12 col-lg-6) ya manejan esto,
+     pero si tuvieras .image-column y .text-column, deberías ajustarlas: */
+  /* .image-column,
+  .text-column {
+    flex: 0 0 100%;
+    max-width: 100%;
+  } */
+
+  .about-us-img {
+    margin-bottom: 30px;
+    transform: translateY(0);
+    /* Asegúrate de que la imagen no sea excesivamente grande en móvil */
+    max-width: 80% !important; /* Ajusta según sea necesario para móviles */
+  }
+
+  .section-title {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .section-quote {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-us-content {
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+.titulo-mision {
+  color: #4aa49c;
+}
+.titulo-vision {
+  color: #f0bf45;
+}
+
+.about-us-background {
+  background-color: #D4A017;
+  padding: 3rem 0;
+}
+
+.about-us-background .section-title {
+  color: #26958C;
+}
+
+.about-us-background .section-text {
+  color: #333;
+}
+
+.about-us-background .section-quote {
+  color: #26958C;
+}
+
+.highlighted-text {
+  color: #26958C !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  font-size: 1.1em !important;
+  letter-spacing: 0.5px !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
+.py-md-6 {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+@media (max-width: 768px) {
+  .py-md-6 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .highlighted-text {
+    font-size: 1.05em !important;
+  }
+}
